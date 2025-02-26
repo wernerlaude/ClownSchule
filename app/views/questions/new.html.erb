@@ -1,0 +1,54 @@
+<%= turbo_frame_tag "form_frame" do %>
+  <div class="form_container" data-aos="flip-left" data-aos-delay="200">
+    <fieldset>
+      <h1 class="h5">Stelle deine Frage an den Clown</h1>
+      <%= form_with(model: @question) do |form| %>
+
+        <%= render partial: "shared/form_errors", locals: { object: form.object } %>
+
+        <div class="mb-2">
+          <%= form.text_field :name, placeholder: 'Deine Name', class: "form-control shadow-sm" %>
+        </div>
+
+        <div class="mb-2">
+          <%= form.email_field :email, placeholder: 'Deine Email', class: "form-control shadow-sm", id: "InputEmail", aria_describedby: "emailHelp" %>
+        </div>
+
+        <div class="mb-2">
+          <%= form.text_area :frage, placeholder: 'Deine Frage', class: "form-control shadow-sm", rows: "3" %>
+          <label>Stelle hier deine Frage an den Clown</label>
+        </div><br />
+
+        <%= textcaptcha_fields(form) do %>
+          Spam-Check, um zu beweisen, dass du ein Mensch bist.<br/>
+          Frage: <%= form.label :textcaptcha_answer, @question.textcaptcha_question %>
+          <%= form.text_field :textcaptcha_answer, :value => '', placeholder: 'Deine Antwort', class: "form-control shadow-sm" %>
+        <% end %>
+        <br/>
+
+        Die abgesendeten Daten werden nur zum Zweck der Bearbeitung Ihres Anliegens verarbeitet. Meine
+        <%= link_to 'Datenschutzhinweise', datenschutz_path, target: '_top' %> finden Sie hier.<br/>
+        <div id="emailHelp">Wir geben deine Email nicht weiter.</div>
+        <br/><br/>
+
+        <div class="">
+          <%= form.submit 'Absenden', class: 'btn btn-primary custom-btn-size shadow-sm' %>
+        </div>
+
+      <% end %>
+    </fieldset>
+  </div>
+
+<% end %>
+
+<% content_for :title do %>
+Stelle deine Frage an den Clown
+<% end %>
+
+<% content_for :meta do %>
+Hier kannst du dem Clown Fragen stellen !
+<% end %>
+
+<% content_for :cano do %>
+https://www.clownschule-confetti.de/questions/new
+<% end %>

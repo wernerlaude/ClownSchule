@@ -1,0 +1,159 @@
+<div class="container give-navi-space shadow-lg">
+  <section class="row flex-lg-row-reverse align-items-center g-5 py-5 with-border-bottom">
+
+    <div class="col-12 col-md-6 col-lg-6">
+      <%= image_tag 'konfetti-clown.webp', class: "d-block mx-lg-auto img-fluid", alt: "Clownschule Confetti", title: "Clownschule Confetti - Clown Workshops", width: "700",
+                    height: "700" %>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-6 pt-5">
+      <h1 class="display-5 fw-bold lh-1 mb-3">Clownschule Confetti</h1>
+      <h2>Entdecke den Clown in Dir</h2>
+      <h3>Folge der Freude und entdecke ungeahnte Leichtigkeit!</h3>
+      <p>"Entdecke den Clown in Dir" ist eine Aufforderung, sich selbst nicht allzu ernst zu nehmen und den
+        spielerischen, humorvollen und kreativen Teil deiner Persönlichkeit zu erforschen.</p>
+      <p>Der Begriff "Clown" wird oft mit Spaß,
+        Unbeschwertheit und der Fähigkeit verbunden, über sich selbst zu lachen und Witze zu machen.
+      </p>
+      <p>Indem man den Clown in sich entdeckt, und sich von der
+        Leichtigkeit und Freude des Clown-Charakters inspirieren
+        läßt, kann man neue Perspektiven auf sein Leben gewinnen.<br/> Es geht darum, sich selbst zu akzeptieren und
+        <span class="mark">das Leben mit einem Lächeln anzunehmen.</span></p>
+      <h3 class="blue mt-4">Ich möchte dich herzlich zu den Workshops in meine
+        <span class="regenbogen"><b>Clownschule Confetti</b></span> einladen!</h3>
+      <p><%= image_tag 'clown-96.svg', class: "svg-float-left", alt: "Clownschule: Entdecke den Clown" %>
+
+        Wenn du schon immer davon geträumt hast, die Welt mit
+        einem Lächeln zu verzaubern, dann ist dies deine Chance, den Clown in dir zu entdecken und zu entfesseln.</p>
+    </div>
+
+  </section>
+
+  <section class="row flex-lg-row gx-5 pt-5 pb-3 with-border-bottom">
+    <div class="col-12 col-md-6 col-lg-6">
+      <h3 class="green mb-4">Clown Ausbildungen & Clown Workshops</h3>
+
+      <turbo-frame id="view_more">
+
+        <%= render 'shared/subnavi' %>
+
+        <hr/>
+        <h4 class="blue">Entdecke den Clown in Dir - Hebe Deine Lebensfreude auf ein neues Level!</h4>
+        <p>
+          Es macht Spaß als Clown neue und ungeahnte Seiten an uns selbst zu entdecken.
+          Unsere Fehler und Unzulänglichkeiten sind für Clowns die größten Schätze. Dinge,
+          die wir im Alltag nicht mögen z. B. das Chaos ist absolut lustig in der Clown-
+          Interpretation.<br/>
+          <b>Begegne noch heute der Kraft des Lachens!</b></p>
+        <p><span class="mark">Räume der Gelassenheit öffnen:</span>
+          Clowns gehen in Kliniken, Seniorenheime, Behinderteneinrichtungen, Kindergeburtstage
+          und vieles mehr... Manchmal sind unsere Zuschauer ängstlich oder abwehrend. Wie
+          gelingt es dem Clown durch sein Auftreten von dem Menschen willkommen geheißen zu
+          werden?
+        </p>
+        <p><span class="mark">Das Leben ist ein Spiel:</span>
+          Der Clown vermehrt die Lebensfreude und versteht das Leben als Spiel. Alles ist ein
+          Abenteuer! Wir begegnen dem unbeschwerten, lustigen und unvoreingenommenen Teil
+          in uns. Wir entdecken die uns allen innewohnende Lebensfreude und Kreativität wieder.
+        </p>
+        <p><span class="mark">Herzlichkeit:</span>
+          Der Clown zeichnet sich durch Freiheit, Offenheit und Herzlichkeit aus. Auch in
+          schwierigen oder traurigen Momenten eröffnet er Räume von Humor und Verbundenheit.
+          Die Clown-Energie erlaubt uns alles falsch zu machen, zu scheitern, zu stolpern und
+          daran Spaß zu haben!</p>
+        <p class="mb-5"><span class="mark">Frei von Anspüchen:</span>
+          Der Clown begegnet den Menschen frei, offen und ohne Ansprüche. Jeder Kontakt ist
+          durchdrungen von Feinfühligkeit, Respekt und Wertschätzung.</p>
+
+      </turbo-frame>
+    </div>
+    <div class="col-12 col-md-6 col-lg-6">
+
+      <div class="row">
+        <div class="col-md-12 col-lg-6">
+          <%= render(CardComponent.new(subtitle: "Online Kurs", title: "Entdecke den Clown in dir", card_text:
+            "Es macht Spaß als Clown neue und ungeahnte Seiten an uns selbst zu entdecken. <br />Unsere Fehler und Unzulänglichkeiten sind für Clowns die größten Schätze.
+Begegne noch heute der Kraft des Lachens!", url: "https://www.digistore24.com/product/386511",
+                                       label: 'Entdecke den Clown in Dir Online Workshop buchen', img: 'card-entdecke.webp', alt: 'Clown Workshops: Entdecke den Clown in Dir')) %>
+        </div>
+
+        <div class="col-md-12 col-lg-6">
+          <%= render(CardComponent.new(subtitle: "Online Kurs", title: "Kunst der Klinikclowns",
+                                       card_text: "Klinikclowns sind speziell ausgebildete Künstler, die in Krankenhäusern, Pflegeeinrichtungen und medizinischen Einrichtungen arbeiten, Patienten, insbesondere Kinder, deren Familien zu unterstützen und aufzumuntern.",
+                                       url: "https://www.digistore24.com/product/451691",
+                                       label: 'Klinik Clown Online Workshop buchen', img: 'card-clinic.webp', alt: 'Clownschule: Klinik Clown')) %>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="row gx-5 py-5">
+
+    <div class="col-12 col-md-6 col-lg-6">
+      <h4 class="blue mb-4">In den Online Workshops meiner <span class="regenbogen">Clownschule Confetti</span> lernst du:</h4>
+      <p><%= image_tag 'clown-96.svg', class: "svg-float-left", alt: "Clown Workshop: Grundlagen der Clown-Comedy" %>
+        <span class="mark">Grundlagen der Clown-Comedy:</span> Von lustigen Grimassen bis hin zu Slapstick und
+        verrückten Improvisationen.</p>
+      <p><%= image_tag 'clown-96.svg', class: "svg-float-left", alt: "Clown Workshop: Die Magie des Clowntheaters" %>
+        <span class="mark">Die Kunst des Clownschminkens:</span> Lerne, wie du dein Gesicht in ein lustiges Kunstwerk
+        verwandelst und deinen
+        eigenen Clowncharakter erschaffst.</p>
+      <p><%= image_tag 'clown-96.svg', class: "svg-float-left", alt: "Clown Workshop: Die Magie des Clowntheaters" %>
+        <span class="mark">Die Magie des Clowntheaters:</span> Entdecke die Bühne als deinen Spielplatz und lerne, wie
+        du mit deiner einzigartigen Persönlichkeit und deinem Humor das Publikum begeistern kannst.
+      <p>
+      <p>Egal, ob du bereits Erfahrung als Clown hast oder völlig neu in diesem Bereich bist,
+        <%= link_to ' Sandra Cardamone', sandra_cardamone_path %> steht dir mit Rat und Tat zur Seite, um deine clownesken
+        Fähigkeiten zu entwickeln und zu verfeinern.
+      </p>
+
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-6">
+
+      <h4 class="blue mb-4">Bevor du gehst… nimm noch unsere <span class="regenbogen">TakeAway's</span></h4>
+
+      <blockquote class="blockquote">
+        <p class="mb-0">Lachen ist Leben und umgekehrt.</p>
+        <footer class="blockquote-footer"><cite title="Source Title">Oskar Wilde</cite></footer>
+      </blockquote>
+
+      <blockquote class="blockquote">
+        <p class="mb-0">Jeder Mensch ist ein Clown, aber nur wenige haben den Mut, es zu zeigen.</p>
+        <footer class="blockquote-footer"><cite title="Source Title">Charlie Rivel</cite></footer>
+      </blockquote>
+
+      <blockquote class="blockquote">
+        <p class="mb-0">Ein Tag ohne Lachen ist ein verlorener Tag.</p>
+        <footer class="blockquote-footer"><cite title="Source Title">Charlie Chaplin</cite></footer>
+      </blockquote>
+
+      <hr/>
+      <div class="text-center">
+        <%= link_to 'pdf/laeuft-die-nase-staendig.pdf', target: '_blank' do %>
+          <%= image_tag 'take-away.svg', alt: '5 effektive und leicht umsetzbare Tipps, wie du dich in einen Clown verwandelst',
+                        title: '5 effektive und leicht umsetzbare Tipps, wie du dich in einen Clown verwandelst' %>
+        <% end %>
+        <p>5 effektive und leicht umsetzbare Tipps, wie du dich in einen Clown verwandelst</p>
+      </div>
+    </div>
+
+  </section>
+
+</div>
+
+
+<% content_for :title do %>
+Clownschule Confetti - Clown Workshops Online
+<% end %>
+
+<% content_for :meta do %>
+Clown Workshops Online: Deine Chance, den Clown in dir zu entdecken und zu entfesseln. Schon immer davon geträumt die Welt mit einem Lächeln zu verzaubern?
+<% end %>
+
+<% content_for :cano do %>
+https://www.clownschule-confetti.de
+<% end %>
+
+
+

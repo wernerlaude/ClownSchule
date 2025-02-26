@@ -1,0 +1,21 @@
+<header id="header" class="header fixed-top d-flex align-items-center">
+  <div class="container d-flex align-items-center justify-content-between">
+
+     <button id="btnConfetti" type="button" class="logo d-flex align-items-center me-auto me-lg-0 navbar-brand">Clownschule Confetti</button>
+
+    <nav id="navbar" class="navbar">
+      <ul>
+        <li><%= link_to 'Der Clown in Dir  🎉', root_path,  class: 'nav-link start' %></li>
+        <li><%= link_to 'KlinikClown', klinikclown_kurs_path,  class: 'nav-link klinik' %></li>
+        <li><%= link_to 'Frage den Clown', frage_den_clown_path,  class: 'nav-link frage' %></li>
+        <li><%= link_to 'Clown Videos', movies_path,  class: 'nav-link videos' %></li>
+        <li><%= link_to 'Über Sandra', sandra_cardamone_path, class: 'nav-link mich' %></li>
+      </ul>
+    </nav>
+
+    <span></span>
+    <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+    <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+  </div>
+</header>

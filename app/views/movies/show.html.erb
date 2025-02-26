@@ -1,0 +1,35 @@
+<div class="container give-navi-space shadow-lg bo">
+  <section class="row flex-lg-row align-items-center g-5 py-5">
+
+    <div class="col-12 col-md-5 col-lg-5">
+      <h1 class="display-5 fw-bold lh-1 mb-3">Confetti Clowns im Video</h1>
+      <h2><%= @movie.title %></h2>
+      <h3>Im Video: <%= @movie.beschreibung %></h3>
+      <p><%= @movie.inhalt %></p><br /><br />
+      <p><%=link_to "Andere Video's mit dem Clown", movies_path %></p>
+    </div>
+
+    <div class="col-12 col-md-7 col-lg-7">
+
+            <video width="100%" height="auto" controls>
+              <source src="https://www.clownschule-confetti.de/<%= @movie.url %>" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+
+    </div>
+
+  </section>
+
+</div>
+
+<% content_for :title do %>
+<%= @movie.title %>
+<% end %>
+
+<% content_for :meta do %>
+ClownschuleConfetti Video: <%= @movie.beschreibung %>
+<% end %>
+
+<% content_for :cano do %>
+https://www.clownschule-confetti.de/videos-mit-dem-clown/<%= @movie.id %>-<%= @movie.slug %>
+<% end %>

@@ -1,0 +1,41 @@
+@charset "UTF-8";
+@import "bootstrap";
+
+@import 'variables';
+@import "layout";
+@import "typo";
+@import "basic";
+@import "deco";
+@import "navbar";
+@import "lists";
+@import "button";
+@import "animations";
+@import "aos";
+
+.border {
+  border: 1px solid var(--bs-gray-300) !important;
+}
+iframe {
+  display: block;
+  border-style:none;
+  margin: 0 auto;
+}
+
+
+@media (min-width: 576px) {
+  .card-deck .card {
+    flex-basis: calc(50% - 30px);
+  }
+}
+
+@media (min-width: 768px) {
+  .card-deck .card {
+    flex-basis: calc(33.33% - 30px);
+  }
+}
+
+@media (min-width: 992px) {
+  .card-deck .card {
+    flex-basis: calc(25% - 30px);
+  }
+}

@@ -1,0 +1,85 @@
+<div class="container give-navi-space shadow-lg">
+  <section class="row flex-lg-row-reverse align-items-center g-5 py-5 with-border-bottom">
+
+    <div class="col-12 col-md-6 col-lg-6">
+      <%= image_tag 'fragen-clown.webp', class: "d-block mx-lg-auto img-fluid", alt: "Deine Fragen an den Clown",
+                    title: "Deine Fragen an den Clown", width: "700",
+                    height: "700", loading: "lazy" %>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-6 pt-5">
+      <h1 class="display-5 fw-bold lh-1 mb-3">Deine Fragen an den Clown</h1>
+      <h2>Hier kannst du dem Clown Fragen stellen !</h2>
+      <h3>Fragen, die bisher gestellt wurden:</h3>
+
+      <ul class="frage">
+        <li>Was hat dich dazu inspiriert, ein Clown zu werden❓</li>
+        <li>Was ist dein Lieblingsteil daran, ein Clown zu sein❓</li>
+        <li>Wie lange übst du schon die Kunst des Clownseins❓</li>
+        <li>Wie bereitest du dich auf eine Clown-Aufführung vor❓</li>
+      </ul>
+    </div>
+
+
+  </section>
+
+  <section class="row flex-lg-row gx-5 pt-5 pb-3">
+
+    <div class="col-12 col-md-6 col-lg-6 mb-5">
+      <h4 class="blue mb-4">Hast du eine Frage? Hier kannst du sie loswerden. Einfach auf die Sprechblase klicken!</h4>
+
+      <%= turbo_frame_tag "form_frame" do %>
+
+        <%= link_to (image_tag 'frage.webp', class: "img-fluid", alt: 'Frage an den Clown'), new_question_path, data: { turbo_frame: 'form_frame' } %>
+
+      <% end %>
+
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-6">
+      <h4 class="blue mb-4">Diese Fragen gab es bisher…</h4>
+
+      <h5>Was hat dich dazu inspiriert, ein Clown zu werden❓</h5>
+      <p>Freunde von mir arbeiteten als Klinikclowns in der Uniklinik in Düsseldorf und sagten zu mir: "Clown!
+        Das wäre was für Dich!" Zu dieser Zeit war ich Beamtin bei der Stadtverwaltung und machte nebenberuflich eine Ausbildung
+        zur Yogalehrerin. Ich konnte mir nicht vorstellen, mich zum "Affen" zu machen oder andere "nachzuäffen". Es
+        stellte sich heraus, dass ich eine völlig falsche Vorstellung von Klinikclowns hatte. Meine Freunde erklärten
+        mir, dass es um einen freundlichen Kontakt zu Menschen geht. Es geht darum, Freude zu schenken und ein bunter
+        Farbklecks in einem grauen Krankenhausalltag zu sein. Nach dieser Erklärung machte ich ein Wochenende zum Clown
+        und es stellte sich heraus, dass meine Freunde recht hatten. Mein Clown war geboren.</p>
+      <h5>Wie lange übst du schon die Kunst des Clownseins❓</h5>
+      <p>Mein erster Kontakt zur Clownarbeit war ca. 1995.
+        Zunächst habe ich Wochenendkurse besucht und Seminarurlaube zum Clown gebucht. Dann habe ich eine professionelle
+        Clownausbildung in Köln absolviert. Hiernach habe ich Fortbildungen zum Klinikclown und Bühnenclown gemacht.
+        Besonders inspirieren mich bis heute Gardi Hutter und David Gilmore.
+      </p>
+      <h5>Was ist dein Lieblingsteil daran, ein Clown zu sein❓</h5>
+      <p>Ich freue mich besonders über die Kinder, die erst zurückhaltend sind. Wenn diese Kinder "auftauen" und ganz
+        freudig mit mir spielen, dann hüpft mein Herz vor Freude.
+      </p>
+      <h5>Wie bereitest du dich auf eine Clown-Aufführung vor❓</h5>
+      <p>Meist lese ich kurz vor einer Aufführung mein Lieblingsbuch zum Clown: Die kleine Magie des Lächelns, Oups Verlag
+        Dieses Buch bringt mich zuverlässig in eine freudige und leichte Stimmung.
+      </p>
+
+    </div>
+
+  </section>
+
+</div>
+
+
+
+
+
+<% content_for :title do %>
+Deine Frage an den Clown - Clownschule Confetti
+<% end %>
+
+<% content_for :meta do %>
+Deine Fragen an den Clown stellen und Sandra's Antworten lesen. Was macht ein Clown? Was ist ein Klinik Clown?
+<% end %>
+
+<% content_for :cano do %>
+https://www.clownschule-confetti.de/frage-den-clown
+<% end %>

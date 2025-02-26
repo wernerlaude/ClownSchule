@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html class="antialiased" lang="de">
+<head>
+  <title><%= yield :title %></title>
+
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <meta name="description" content="<%= yield :meta %>"/>
+  <meta name="author" content="Sandra Cardamone">
+  <meta name="distribution" content="global"/>
+  <meta name="content-language" content="de">
+  <meta name="page-topic" content="Clownschule Confetti">
+  <meta name="page-type" content="Beschreibung">
+  <meta name=“site_name“ content="clownschule-confetti.de"/>
+  <meta name="robots" content="index,follow"/>
+  <meta name="referrer" content="origin">
+
+  <meta name="seobility" content="c4acddfe4057dc59d395212a268d0038">
+
+  <link rel="canonical" href="<%= yield :cano %>"/>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <%= favicon_link_tag image_path('favicon.svg') %>
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= javascript_importmap_tags %>
+
+</head>
+
+<body>
+
+<%= render 'shared/navigation' %>
+<main id="main" class="navi-space">
+  <%= yield %>
+  <%= render 'shared/footer' %>
+</main>
+<%= render 'shared/modal' %>
+
+</body>
+</html>
+

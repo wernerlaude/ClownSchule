@@ -1,0 +1,47 @@
+ul {
+  font-size: 1.25rem;
+  list-style-type: disc;
+  margin-left: 1rem;
+
+  &.red-dot {
+    li {
+      color: var(--color-secondary);
+
+      & > span {
+        color: var(--bs-body-color);
+      }
+    }
+  }
+
+  &.no-dot {
+    li {
+      list-style-type: none;
+      color: var(--bs-body-color);
+      line-height: 1.7rem;
+      padding-bottom: .4rem;
+    }
+  }
+
+  &.balloon {
+    list-style-type: none;
+    padding-left: .5rem;
+    list-style-position: inside;
+    text-indent: -1em;
+
+  }
+  &.frage {
+    list-style-type: none;
+    list-style-position: inside;
+    margin-left: 0;
+    padding-left: 0;
+
+  }
+}
+
+table.table th {
+  background-color: var(--bs-card-bg);
+}
+
+table.table td {
+  background-color: #2da3c0;
+}
