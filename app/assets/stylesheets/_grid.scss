@@ -1,0 +1,38 @@
+/* _grid.scss */
+/* Grid Layout: Header, Content, Footer */
+
+.wrapper {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "content"
+    "footer";
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+/* Header */
+.header {
+  grid-area: header;
+  background-color: var(--color-header-bg);
+  color: var(--color-weiss);
+  padding: var(--spacing-lg) var(--content-padding);
+}
+
+/* Content */
+.content {
+  grid-area: content;
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  background: var(--color-content-bg);
+}
+
+
+/* Footer */
+.footer {
+  grid-area: footer;
+  background-color: var(--color-footer-bg);
+  padding: var(--spacing-lg) var(--content-padding);
+}

@@ -4,20 +4,21 @@ de:
       messages:
         record_invalid: 'Gültigkeitsprüfung ist fehlgeschlagen: %{errors}'
         restrict_dependent_destroy:
-          has_one: Datensatz kann nicht gelöscht werden, da ein abhängiger %{record}-Datensatz existiert.
+          has_one: Datensatz kann nicht gelöscht werden, da ein abhängiger %{record}-Datensatz
+            existiert.
           has_many: Datensatz kann nicht gelöscht werden, da abhängige %{record} existieren.
       models:
-        question:
+        contact:
           attributes:
             textcaptcha_answer:
-              incorrect: " - das stimmt nicht, versuche es nochmal!"
+              incorrect: "das stimmt nicht, versuche es nochmals!"
               expired: "wurde nicht beantwortet, versuchen Sie es stattdessen mit einer anderen Frage!"
     attributes:
-      question:
+      contact:
         textcaptcha_answer: "TextCaptcha Antwort"
   activemodel:
     attributes:
-      consent: "Unser Datenschutz"
+        consent: "Unser Datenschutz"
   date:
     abbr_day_names:
       - So
@@ -118,9 +119,9 @@ de:
     format: "%{attribute} %{message}"
     messages:
       accepted: muss akzeptiert werden
-      blank: -wäre gut zu haben…
+      blank: …wäre gut zu haben…
       confirmation: stimmt nicht mit %{attribute} überein
-      empty: -wäre gut zu haben…
+      empty: …wäre gut zu haben…
       equal_to: muss genau %{count} sein
       even: muss gerade sein
       exclusion: ist nicht verfügbar
@@ -223,7 +224,7 @@ de:
   time:
     am: vormittags
     formats:
-      default: "%A, %d. %B %Y, %H:%M Uhr"
+      default: "%A, %d. %B %Y"
       long: "%A, %d. %B %Y, %H:%M Uhr"
       short: "%d. %B, %H:%M Uhr"
     pm: nachmittags

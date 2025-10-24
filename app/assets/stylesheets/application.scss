@@ -1,41 +1,33 @@
-@charset "UTF-8";
-@import "bootstrap";
+/* application.scss */
+/* Haupt-Stylesheet - importiert alle Module */
 
-@import 'variables';
-@import "layout";
-@import "typo";
-@import "basic";
-@import "deco";
-@import "navbar";
-@import "lists";
-@import "button";
-@import "animations";
-@import "aos";
+/* 1. CSS Custom Properties */
+@import "variables";
 
-.border {
-  border: 1px solid var(--bs-gray-300) !important;
-}
-iframe {
-  display: block;
-  border-style:none;
-  margin: 0 auto;
-}
+/* 2. Base & Reset */
+@import "base";
+
+/* 3. Grid Layout */
+@import "grid";
+
+/* 4. Header & Navigation */
+@import "header";
+@import "navigation";
 
 
-@media (min-width: 576px) {
-  .card-deck .card {
-    flex-basis: calc(50% - 30px);
-  }
+/* Debug Border - kann entfernt werden */
+.border{
+  border: 1px solid red;
 }
 
-@media (min-width: 768px) {
-  .card-deck .card {
-    flex-basis: calc(33.33% - 30px);
-  }
-}
-
-@media (min-width: 992px) {
-  .card-deck .card {
-    flex-basis: calc(25% - 30px);
-  }
+.navbar-brand {
+  font-family: 'MontserratAlternates', serif;
+  //font-size: 2.2vw;
+  font-size: 2.2rem;
+  font-weight: 600;
+  letter-spacing: -2px;
+  background-image: linear-gradient(to left, violet, indigo, blue, green, orange, red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border: none !important;
 }

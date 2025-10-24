@@ -1,43 +1,34 @@
 <!DOCTYPE html>
-<html class="antialiased" lang="de">
-<head>
-  <title><%= yield :title %></title>
+<html>
+  <head>
+    <title><%= content_for(:title) || "Clown Schule" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Clown Schule">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="description" content="<%= yield :desc %>"/>
+    <meta name="author" content="Sandra Cardamone">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
 
-  <%= csrf_meta_tags %>
-  <%= csp_meta_tag %>
+    <%= yield :head %>
+    <link rel="canonical" href="<%= yield :cano %>"/>
 
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-  <meta name="description" content="<%= yield :meta %>"/>
-  <meta name="author" content="Sandra Cardamone">
-  <meta name="distribution" content="global"/>
-  <meta name="content-language" content="de">
-  <meta name="page-topic" content="Clownschule Confetti">
-  <meta name="page-type" content="Beschreibung">
-  <meta name=“site_name“ content="clownschule-confetti.de"/>
-  <meta name="robots" content="index,follow"/>
-  <meta name="referrer" content="origin">
+    <%= stylesheet_link_tag :application, "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
 
-  <meta name="seobility" content="c4acddfe4057dc59d395212a268d0038">
-
-  <link rel="canonical" href="<%= yield :cano %>"/>
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-
-  <%= favicon_link_tag image_path('favicon.svg') %>
-  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-  <%= javascript_importmap_tags %>
-
-</head>
-
-<body>
-
-<%= render 'shared/navigation' %>
-<main id="main" class="navi-space">
-  <%= yield %>
-  <%= render 'shared/footer' %>
-</main>
-<%= render 'shared/modal' %>
-
-</body>
+  <body>
+  <div class="wrapper">
+    <%=render "shared/header" %>
+    <div class="content">
+      <%= yield %>
+    </div>
+    <%=render "shared/footer" %>
+  </div>
+  </body>
 </html>
-

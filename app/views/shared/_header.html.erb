@@ -1,0 +1,39 @@
+<div class="header" data-controller="navigation">
+  <div class="header-container">
+    <button id="btnConfetti" type="button" class="header-logo navbar-brand">Clownschule Confetti</button>
+
+    <button
+      class="hamburger"
+      data-navigation-target="hamburger"
+      data-action="click->navigation#toggle"
+      type="button"
+      aria-label="Navigation öffnen">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+
+    <nav class="nav" data-navigation-target="menu">
+      <ul class="nav-list">
+        <li class="nav-item">
+          <%= link_to 'Der Clown in Dir  🎉', root_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'KlinikClown', klinikclown_kurs_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Clown Videos', movies_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Über Sandra', sandra_cardamone_path, class: "nav-link" %>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <div
+    class="nav-overlay"
+    data-navigation-target="overlay"
+    data-action="click->navigation#closeOnOverlay">
+  </div>
+</div>

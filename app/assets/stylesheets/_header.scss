@@ -1,0 +1,74 @@
+/* _header.scss */
+/* Header mit Logo und Hamburger */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-header);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+  max-width: var(--content-max-width);
+  height: var(--header-height);
+  margin: 0 auto;
+  padding: 0 var(--content-padding);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-lg);  /* ✅ GEFIXT: Gap zwischen Logo und Nav */
+}
+
+/* Logo */
+.header-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  flex-shrink: 0;  /* ✅ GEFIXT: Logo behält seine Größe */
+  
+  @media (min-width: 768px) {
+    font-size: 1.75rem;
+  }
+}
+
+/* Hamburger Button */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 21px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: var(--z-hamburger);
+  position: relative;
+  flex-shrink: 0;  /* ✅ GEFIXT: Hamburger behält seine Größe */
+  
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.hamburger-line {
+  width: 100%;
+  height: 3px;
+  background-color: var(--gelb);
+  border-radius: 2px;
+  transition: all var(--transition-speed) ease;
+}
+
+/* Hamburger Animation zu X */
+.hamburger.is-active .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.is-active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.is-active .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}

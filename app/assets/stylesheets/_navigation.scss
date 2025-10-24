@@ -1,0 +1,140 @@
+/* _navigation.scss */
+/* Responsive Navigation mit Slide-in von rechts */
+
+/* Navigation Container */
+.nav {
+  /* Mobile: Slide-in von rechts */
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: var(--nav-width);
+  background-color: var(--color-nav-bg);
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+  transform: translateX(100%);
+  transition: transform var(--transition-speed) ease;
+  z-index: var(--z-nav);
+  overflow-y: auto;
+
+  &.is-open {
+    transform: translateX(0);
+  }
+
+  /* Desktop: Immer sichtbar, keine Animation */
+  @media (min-width: 768px) {
+    position: static;
+    width: auto;
+    flex-shrink: 0;  /* ✅ GEFIXT: Verhindert dass Nav zu viel Platz nimmt */
+    background-color: transparent;
+    box-shadow: none;
+    transform: none;
+    overflow-y: visible;
+  }
+}
+
+/* Overlay (nur Mobile) */
+.nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-overlay);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-speed) ease,
+  visibility var(--transition-speed) ease;
+  z-index: var(--z-overlay);
+
+  &.is-visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+/* Navigation Liste */
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  /* Mobile: Vertikale Liste mit Padding oben */
+  padding-top: calc(var(--header-height) + var(--spacing-lg));
+
+  @media (min-width: 768px) {
+    display: flex;
+    gap: var(--spacing-lg);
+    padding-top: 0;
+    flex-wrap: nowrap;  /* ✅ GEFIXT: Kein Umbruch */
+  }
+}
+
+.nav-item {
+  border-bottom: 1px solid var(--color-border);
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  @media (min-width: 768px) {
+    border-bottom: none;
+    flex-shrink: 0;  /* ✅ GEFIXT: Items behalten ihre Größe */
+  }
+}
+
+.nav-link {
+  display: block;
+  padding: var(--spacing-md) var(--spacing-lg);
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: rgba(0, 153, 204, 0.1);
+    color: var(--color-header-bg);
+  }
+
+  &.active {
+    background-color: rgba(0, 153, 204, 0.15);
+    color: var(--color-header-bg);
+    font-weight: 600;
+  }
+
+  @media (min-width: 768px) {
+    padding: var(--spacing-sm) 0;
+    color: var(--weiss);
+    font-weight: 700;
+    background-color: transparent;
+    position: relative;
+    white-space: nowrap;  /* ✅ GEFIXT: Text bleibt in einer Zeile */
+
+    /* Unterstreichung */
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--gelb);
+      transition: width var(--transition-speed) ease;
+    }
+
+    /* Hover: Unterstreichung von links nach rechts */
+    &:hover::after,
+    &.active::after {
+      width: 100%;
+    }
+
+    &:hover,
+    &.active {
+      background-color: transparent;
+      color: var(--weiss);  /* ✅ GEFIXT: Konsistente Farbe */
+    }
+  }
+}
