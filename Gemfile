@@ -33,6 +33,6 @@ end
 
 
 gem "sass-rails", "~> 6.0.0"
-gem "mailgun-ruby", "~>1.2.5"
+gem "mailgun-ruby", "~>1.4.0"
 gem "view_component"
 gem "stripe"
