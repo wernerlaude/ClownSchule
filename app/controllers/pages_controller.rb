@@ -5,10 +5,8 @@ class PagesController < ApplicationController
   end
 
   def fragen
-
   end
 
   def about
-
   end
 end
