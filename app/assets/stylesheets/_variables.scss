@@ -2,41 +2,66 @@
 /* CSS Custom Properties */
 
 :root {
-  /* Farben */
+  /* Farben - Corporate */
   --gelb: hsl(41, 100%, 50%);
   --weiss: hsl(0, 0%, 100%);
+  --green: hsl(99, 52%, 57%);
+  --color-secondary: hsl(0, 67%, 54%);
+  --blau-gruen: hsl(192, 55%, 49%);
 
+  /* Farben - Komponenten */
+  --color-primary: var(--green);
+  --color-primary-pale: hsla(99, 52%, 57%, 0.2);
+  --color-accent: hsl(0, 67%, 54%);
   --color-body-bg: var(--gelb);
   --color-content-bg: var(--weiss);
   --color-weiss: var(--weiss);
   --color-text: #444444;
+  --color-text-light: #666;
+  --color-text-lighter: #999;
   --color-header-bg: hsl(207, 75%, 55%);
   --color-footer-bg: hsl(207, 65%, 39%);
   --color-border: #b4b3b3;
   --color-overlay: rgba(0, 0, 0, 0.5);
-  --color-nav-bg: hsl(0, 0%, 95%);  /* Leicht grau für Slideout */
-  
+  --color-nav-bg: hsl(0, 0%, 95%);
+  --color-background-light: #f8f9fa;
+
   /* Layout */
   --content-max-width: 70rem;
-  --content-padding: 1rem;  /* ✅ GEFIXT: Jetzt auch für Mobile definiert */
-  --header-height: 3rem;  /* ✅ GEFIXT: Größer (56px statt 40px) */
+  --content-padding: 1rem;
+  --header-height: 3rem;
   --nav-width: 280px;
-  
+
   /* Spacing */
-  --spacing-sm: 0.5rem;
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 0.75rem;
   --spacing-md: 1rem;
   --spacing-lg: 1.5rem;
   --spacing-xl: 2rem;
-  
+  --spacing-2xl: 3rem;
+  --spacing-3xl: 4rem;
+
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-round: 50%;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
+
   /* Transitions */
   --transition-speed: 0.3s;
-  
+  --transition-fast: 0.2s;
+
   /* Z-Index */
   --z-header: 1000;
   --z-nav: 1100;
   --z-overlay: 1050;
   --z-hamburger: 1200;
-  
+
   /* Responsive Breakpoints */
   --breakpoint-tablet: 768px;
   --breakpoint-desktop: 1024px;
@@ -45,6 +70,6 @@
 @media (min-width: 768px) {
   :root {
     --content-padding: 2rem;
-    --header-height: 5rem;  /* ✅ GEFIXT: Größer auf Desktop (80px) */
+    --header-height: 5rem;
   }
 }

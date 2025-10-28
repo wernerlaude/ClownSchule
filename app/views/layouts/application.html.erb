@@ -23,13 +23,11 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-  <div class="wrapper">
+  <body class="wrapper">
     <%=render "shared/header" %>
     <div class="content">
       <%= yield %>
     </div>
     <%=render "shared/footer" %>
-  </div>
   </body>
 </html>

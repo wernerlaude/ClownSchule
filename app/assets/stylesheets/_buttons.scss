@@ -1,0 +1,79 @@
+/* _buttons.scss */
+/* Button-Komponenten */
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all var(--transition-speed) ease;
+  display: inline-block;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+
+  &--primary {
+    background: var(--color-primary);
+    color: white;
+
+    &:hover {
+      background: hsl(99, 52%, 47%); // 10% dunkler
+      transform: translateY(-1px);
+    }
+  }
+
+  &--secondary {
+    background: var(--blau-gruen);
+    color: white;
+
+    &:hover {
+      background: hsl(192, 55%, 39%);
+      transform: translateY(-1px);
+    }
+  }
+
+  &--accent {
+    background: var(--color-accent);
+    color: white;
+
+    &:hover {
+      background: hsl(0, 67%, 44%);
+      transform: translateY(-1px);
+    }
+  }
+
+  &--outline {
+    background: transparent;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+
+    &:hover {
+      background: var(--color-primary);
+      color: white;
+    }
+  }
+
+  &--small {
+    padding: var(--spacing-xs) var(--spacing-md);
+    font-size: 0.875rem;
+  }
+
+  &--large {
+    padding: var(--spacing-md) var(--spacing-xl);
+    font-size: 1.125rem;
+  }
+
+  &--full {
+    width: 100%;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+
+    &:hover {
+      transform: none;
+    }
+  }
+}

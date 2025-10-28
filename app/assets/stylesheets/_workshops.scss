@@ -1,0 +1,126 @@
+/* workshops.scss */
+/* Workshop-spezifische Styles */
+
+.workshops {
+  // Kein padding mehr, das kommt von .content
+
+  &__header {
+    // KEIN max-width und margin: 0 auto mehr!
+    // Das hat die Überschrift zentriert
+    margin: var(--spacing-2xl) 0;
+    text-align: left;
+
+    h2 {
+      color: var(--color-primary);
+      font-size: calc(1.325rem + 0.9vw);
+      margin-bottom: var(--spacing-md);
+      text-align: left;
+    }
+  }
+
+  &__intro {
+    font-size: 1.125rem;
+    color: var(--color-text-light);
+  }
+
+  &__grid {
+    @extend .grid-auto;
+    // Auch hier kein max-width mehr, nutzt die volle Breite von .content
+  }
+}
+
+.workshop-card {
+  @extend .card;
+
+  &--featured {
+    grid-column: span 2;
+
+    @media (max-width: 768px) {
+      grid-column: span 1;
+    }
+
+    .workshop-card__content {
+      padding: var(--spacing-xl);
+    }
+
+    .workshop-card__title {
+      font-size: 2rem;
+    }
+  }
+
+  // Aliase für BEM-Konsistenz mit HTML
+  &__content {
+    @extend .card__content;
+  }
+
+  &__image {
+    @extend .card__image;
+  }
+
+  &__badge {
+    @extend .card__badge;
+  }
+
+  &__title {
+    @extend .card__title;
+  }
+
+  &__description {
+    @extend .card__description;
+  }
+
+  &__meta {
+    @extend .card__meta;
+  }
+
+  &__footer {
+    @extend .card__footer;
+  }
+
+  &__price {
+    @extend .card__price;
+  }
+}
+
+
+/* workshop-details.scss */
+/* Detail-Sections für die Workshops */
+
+.workshop-detail {
+  // Kein extra padding, kommt von .content
+
+  h1, h2, h3, h4, h5, h6 {
+    &.h4 {
+      font-size: calc(1rem + 0.5vw);
+      margin-bottom: var(--spacing-md);
+    }
+
+    &.h5 {
+      font-size: calc(0.875rem + 0.3vw);
+      margin-bottom: var(--spacing-sm);
+      margin-top: var(--spacing-lg);
+    }
+
+    &.blue {
+      color: var(--blau-gruen);
+    }
+
+    &.green {
+      color: var(--color-primary);
+    }
+  }
+
+  p {
+    margin-bottom: var(--spacing-md);
+
+    &.mb-5 {
+      margin-bottom: var(--spacing-3xl);
+    }
+  }
+
+  // Link als Button
+  a.btn {
+    display: inline-block;
+    margin-top: var(--spacing-md);
+  }
+}

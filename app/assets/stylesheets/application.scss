@@ -4,30 +4,59 @@
 /* 1. CSS Custom Properties */
 @import "variables";
 
-/* 2. Base & Reset */
+/* 2. Mixins */
+@import "mixins";
+
+/* 3. Base & Reset */
 @import "base";
 
-/* 3. Grid Layout */
-@import "grid";
+/* 4. Page Layout */
+@import "layout";  // ← Umbenannt von grid
 
-/* 4. Header & Navigation */
+/* 5. Header & Navigation */
 @import "header";
 @import "navigation";
 
+/* 6. Typography */
+@import "typo";
 
-/* Debug Border - kann entfernt werden */
-.border{
-  border: 1px solid red;
+/* 7. Komponenten */
+@import "buttons";
+@import "card";
+@import "section";
+
+/* 8. Seiten-spezifisch */
+@import "workshops";
+
+/* 9. Utilities */
+.border {
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.navbar-brand {
-  font-family: 'MontserratAlternates', serif;
-  //font-size: 2.2vw;
-  font-size: 2.2rem;
-  font-weight: 600;
-  letter-spacing: -2px;
-  background-image: linear-gradient(to left, violet, indigo, blue, green, orange, red);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  border: none !important;
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+
+  &.float-end {
+    float: right;
+    max-width: 34rem;
+    margin: var(--spacing-lg);
+  }
+}
+
+img.svg-float-left {
+  float: left;
+  max-height: 4rem;
+}
+
+hr.dotted {
+  border-top: 4px dotted var(--color-secondary);
+  margin: 0;
+}
+
+span.mark {
+  box-shadow: inset 0 -2.5rem 0 var(--color-primary-pale);
+  text-decoration: none;
+  font-weight: 500;
+  transition: box-shadow 0.25s ease;
 }

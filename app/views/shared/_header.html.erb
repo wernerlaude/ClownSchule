@@ -1,18 +1,8 @@
-<div class="header" data-controller="navigation">
+<header class="header" data-controller="navigation">
   <div class="header-container">
-    <button id="btnConfetti" type="button" class="header-logo">Clownschule Confetti</button>
+    <%= link_to "Clownschule Confetti", root_path, class: "header-logo" %>
 
-    <button
-      class="hamburger"
-      data-navigation-target="hamburger"
-      data-action="click->navigation#toggle"
-      type="button"
-      aria-label="Navigation öffnen">
-      <span class="hamburger-line"></span>
-      <span class="hamburger-line"></span>
-      <span class="hamburger-line"></span>
-    </button>
-
+    <!-- Desktop Navigation -->
     <nav class="nav" data-navigation-target="menu">
       <ul class="nav-list">
         <li class="nav-item">
@@ -29,11 +19,20 @@
         </li>
       </ul>
     </nav>
+
+    <!-- Hamburger Button (nur Mobile) -->
+    <button class="hamburger"
+            data-navigation-target="hamburger"
+            data-action="click->navigation#toggle"
+            aria-label="Navigation öffnen">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
   </div>
 
-  <div
-    class="nav-overlay"
-    data-navigation-target="overlay"
-    data-action="click->navigation#closeOnOverlay">
-  </div>
-</div>
+  <!-- Overlay (nur Mobile) -->
+  <div class="nav-overlay"
+       data-navigation-target="overlay"
+       data-action="click->navigation#closeOnOverlay"></div>
+</header>

@@ -1,0 +1,57 @@
+h1, h2 {
+  font-family: 'MontserratAlternates', sans-serif;
+}
+
+h1 {
+  font-size: calc(1.725rem + 2.1vw);
+  color: var(--green);
+  font-weight: 700;
+  text-align: left; // Explizit linksbündig
+
+  @media (max-width: 768px) {
+    font-size: calc(1.425rem + 2.1vw);
+    line-height: calc(1.35rem + 0.9vw);
+  }
+}
+
+h2 {
+  font-size: calc(1.325rem + 0.9vw);
+  color: var(--blau-gruen);
+  font-weight: 500;
+  text-align: left; // Explizit linksbündig
+}
+
+h3 {
+  font-size: calc(0.745rem + 0.9vw);
+  line-height: calc(1.145rem + 0.9vw);
+  font-weight: 500;
+  margin-bottom: 1rem;
+
+  &.blue {
+    color: var(--blau-gruen);
+  }
+}
+
+p {
+  font-size: 1rem; // Gefixt: war calc(var(-- .9rem) * 1.1) - fehlerhaft
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+p b {
+  font-weight: 600;
+}
+
+span.regenbogen {
+  background-image: linear-gradient(to left, violet, indigo, blue, green, orange, red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border: none !important;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: calc(1.425rem + 2.1vw);
+    line-height: calc(1.35rem + 0.9vw);
+  }
+}

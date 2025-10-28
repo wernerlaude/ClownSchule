@@ -1,0 +1,37 @@
+/* _section.scss */
+/* Section-Komponente für strukturierte Bereiche */
+
+.section {
+  padding: var(--spacing-3xl) 0;
+
+  &--small {
+    padding: var(--spacing-2xl) 0;
+  }
+
+  &--large {
+    padding: 6rem 0;
+  }
+
+  &__header {
+    @include container(800px);
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  &__title {
+    color: var(--color-primary);
+    font-size: calc(1.325rem + 0.9vw);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.2;
+  }
+
+  &__subtitle {
+    font-size: 1.125rem;
+    color: var(--color-text-light);
+    line-height: 1.6;
+  }
+
+  &__content {
+    @include container;
+  }
+}

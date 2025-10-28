@@ -1,4 +1,4 @@
-// _layout.scss - Page Structure
+/* _layout.scss */
 /* Page Layout: Wrapper, Header, Content, Footer */
 
 .wrapper {
@@ -23,8 +23,20 @@
   width: 100%;
   max-width: var(--content-max-width);
   margin: 0 auto;
-  padding: 4rem 2rem;
+  padding: var(--spacing-3xl) var(--content-padding); // CSS Custom Properties
   background: var(--color-content-bg);
+
+  // Sections bekommen Abstand zueinander
+  > section {
+    &:not(:last-child) {
+      margin-bottom: var(--spacing-3xl);
+    }
+  }
+
+  // hr bekommt auch Abstand
+  > hr {
+    margin: var(--spacing-3xl) 0;
+  }
 }
 
 .footer {

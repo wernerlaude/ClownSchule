@@ -24,7 +24,7 @@
   @media (min-width: 768px) {
     position: static;
     width: auto;
-    flex-shrink: 0;  /* ✅ GEFIXT: Verhindert dass Nav zu viel Platz nimmt */
+    flex-shrink: 0;
     background-color: transparent;
     box-shadow: none;
     transform: none;
@@ -45,10 +45,12 @@
   transition: opacity var(--transition-speed) ease,
   visibility var(--transition-speed) ease;
   z-index: var(--z-overlay);
+  pointer-events: none; // ← NEU: Verhindert Klicks wenn nicht sichtbar
 
   &.is-visible {
     opacity: 1;
     visibility: visible;
+    pointer-events: auto; // ← NEU: Erlaubt Klicks wenn sichtbar
   }
 
   @media (min-width: 768px) {
@@ -69,7 +71,7 @@
     display: flex;
     gap: var(--spacing-lg);
     padding-top: 0;
-    flex-wrap: nowrap;  /* ✅ GEFIXT: Kein Umbruch */
+    flex-wrap: nowrap;
   }
 }
 
@@ -82,7 +84,7 @@
 
   @media (min-width: 768px) {
     border-bottom: none;
-    flex-shrink: 0;  /* ✅ GEFIXT: Items behalten ihre Größe */
+    flex-shrink: 0;
   }
 }
 
@@ -107,11 +109,11 @@
 
   @media (min-width: 768px) {
     padding: var(--spacing-sm) 0;
-    color: var(--weiss);
+    color: var(--color-weiss);
     font-weight: 700;
     background-color: transparent;
     position: relative;
-    white-space: nowrap;  /* ✅ GEFIXT: Text bleibt in einer Zeile */
+    white-space: nowrap;
 
     /* Unterstreichung */
     &::after {
@@ -134,7 +136,7 @@
     &:hover,
     &.active {
       background-color: transparent;
-      color: var(--weiss);  /* ✅ GEFIXT: Konsistente Farbe */
+      color: var(--color-weiss);
     }
   }
 }

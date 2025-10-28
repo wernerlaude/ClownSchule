@@ -6,6 +6,7 @@
   top: 0;
   z-index: var(--z-header);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: var(--color-header-bg); // ← WICHTIG: Background hinzugefügt
 }
 
 .header-container {
@@ -16,14 +17,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--spacing-lg); /* ✅ GEFIXT: Gap zwischen Logo und Nav */
+  gap: var(--spacing-lg);
 }
 
 /* Logo */
 .header-logo {
   color: white;
   text-decoration: none;
-  flex-shrink: 0; /* ✅ GEFIXT: Logo behält seine Größe */
+  flex-shrink: 0;
+  font-family: 'MontserratAlternates', sans-serif;
   font-size: 1.5rem;
   font-weight: 600;
   letter-spacing: -2px;
@@ -31,7 +33,6 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   border: none !important;
-
 
   @media (min-width: 768px) {
     font-size: 2.25rem;
@@ -51,7 +52,7 @@
   padding: 0;
   z-index: var(--z-hamburger);
   position: relative;
-  flex-shrink: 0; /* ✅ GEFIXT: Hamburger behält seine Größe */
+  flex-shrink: 0;
 
   @media (min-width: 768px) {
     display: none;
@@ -61,7 +62,7 @@
 .hamburger-line {
   width: 100%;
   height: 3px;
-  background-color: var(--gelb);
+  background-color: var(--color-weiss); // ← GEÄNDERT: von gelb zu weiß
   border-radius: 2px;
   transition: all var(--transition-speed) ease;
 }
@@ -69,6 +70,7 @@
 /* Hamburger Animation zu X */
 .hamburger.is-active .hamburger-line:nth-child(1) {
   transform: rotate(45deg) translate(6px, 6px);
+  background-color: var(--color-text); // ← Dunkel wenn aktiv (über weißem Overlay)
 }
 
 .hamburger.is-active .hamburger-line:nth-child(2) {
@@ -77,4 +79,5 @@
 
 .hamburger.is-active .hamburger-line:nth-child(3) {
   transform: rotate(-45deg) translate(6px, -6px);
+  background-color: var(--color-text); // ← Dunkel wenn aktiv
 }
