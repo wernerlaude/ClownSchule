@@ -4,14 +4,11 @@
 /* 1. CSS Custom Properties */
 @import "variables";
 
-/* 2. Mixins */
-@import "mixins";
-
 /* 3. Base & Reset */
 @import "base";
 
 /* 4. Page Layout */
-@import "layout";  // ← Umbenannt von grid
+@import "layout";
 
 /* 5. Header & Navigation */
 @import "header";
@@ -24,6 +21,7 @@
 @import "buttons";
 @import "card";
 @import "section";
+@import "grid";  // ← FEHLTE! Für .grid-auto in workshops
 
 /* 8. Seiten-spezifisch */
 @import "workshops";

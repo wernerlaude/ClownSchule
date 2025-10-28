@@ -1,13 +1,21 @@
 /* _card.scss */
 /* Generische Card-Komponente */
 
+
 .card {
   background: var(--color-content-bg);
   border-radius: var(--radius-md);
   overflow: hidden;
-  @include card-shadow;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-speed) ease,
+  box-shadow var(--transition-speed) ease;
   display: flex;
   flex-direction: column;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
 
   &__image {
     width: 100%;
@@ -66,7 +74,9 @@
   }
 
   &__footer {
-    @include flex-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     gap: var(--spacing-md);
     margin-top: auto;
 

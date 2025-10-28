@@ -1,6 +1,6 @@
 <header class="header" data-controller="navigation">
   <div class="header-container">
-    <%= link_to "Clownschule Confetti", root_path, class: "header-logo" %>
+    <button id="btnConfetti" type="button" class="header-logo">Clownschule Confetti</button>
 
     <!-- Desktop Navigation -->
     <nav class="nav" data-navigation-target="menu">
@@ -10,6 +10,9 @@
         </li>
         <li class="nav-item">
           <%= link_to 'KlinikClown', klinikclown_kurs_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Frage den Clown', frage_den_clown_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to 'Clown Videos', movies_path, class: "nav-link" %>
