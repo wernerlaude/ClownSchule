@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get "ausbildung-zum-klinikclown" => "pages#klinik"
   get "sandra-cardamone" => "pages#about"
 
-  resources :contacts, only: [:create]
+  resources :contacts, only: [ :create ]
   resources :movies, only: %i[index show], path: "videos-mit-dem-clown"
 
   # Stripe Payments

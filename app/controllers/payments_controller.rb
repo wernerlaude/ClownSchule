@@ -23,7 +23,7 @@ class PaymentsController < ApplicationController
     # Stripe Checkout Session erstellen
     session = Stripe::Checkout::Session.create({
                                                  payment_method_types: %w[card sepa_debit],
-                                                 line_items: [{
+                                                 line_items: [ {
                                                                 price_data: {
                                                                   currency: "eur",
                                                                   product_data: {
@@ -33,9 +33,9 @@ class PaymentsController < ApplicationController
                                                                   unit_amount: selected[:price]
                                                                 },
                                                                 quantity: 1
-                                                              }],
+                                                              } ],
                                                  mode: "payment",
-                                                 success_url: kontakt_zum_clown_url(product: product, payment: 'success', session_id: '{CHECKOUT_SESSION_ID}'),  # ← _url statt _path
+                                                 success_url: kontakt_zum_clown_url(product: product, payment: "success", session_id: "{CHECKOUT_SESSION_ID}"),  # ← _url statt _path
                                                  cancel_url: kontakt_zum_clown_url(payment: "cancelled"),  # ← _url statt _path
                                                  locale: "de"
                                                })

@@ -18,11 +18,11 @@ module ApplicationHelper
 
   def betreff_options(selected: nil)
     options = [
-      ['Kurs "Entdecke den Clown in Dir"', "clown-entdecken"],
-      ["KlinikClown Ausbildung", "klinikclown"],
-      ["Clown Coaching", "coaching"],
-      ["Performance Feedback", "feedback"],
-      ["Allgemeine Frage", "allgemein"]
+      [ 'Kurs "Entdecke den Clown in Dir"', "clown-entdecken" ],
+      [ "KlinikClown Ausbildung", "klinikclown" ],
+      [ "Clown Coaching", "coaching" ],
+      [ "Performance Feedback", "feedback" ],
+      [ "Allgemeine Frage", "allgemein" ]
     ]
 
     options

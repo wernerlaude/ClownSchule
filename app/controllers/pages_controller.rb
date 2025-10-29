@@ -13,11 +13,8 @@ class PagesController < ApplicationController
   end
 
   def impressum
-
   end
 
   def datenschutz
-
   end
-
 end
