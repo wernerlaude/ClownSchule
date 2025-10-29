@@ -1,1 +1,231 @@
-über
+<section class="page-intro">
+  <h1>Sandra Cardamone</h1>
+
+  <%= image_tag "sandra-clown.webp", alt: "Clownschule Confetti über Sandra", title: "Clownschule Confetti über Sandra",
+                class: "img-fluid float-end shadow-sm" %>
+  <p class="lead">Sandra Cardamone und Clown Confetti</p>
+  <p>
+    Ich habe diesen besonderen Kurs ins Leben gerufen, weil Clown sein Spass macht!!!
+  </p>
+  <p>
+    Mich als Clown auszudücken befreit und erfreut mich auf eine tiefe und entzückende Weise. Meine professionellen
+    Clown-Ausbildungen (Bühnen-Clown, Charakter-Clown, Klinik- Clown) habe ich in
+    der<br/><%= link_to "Kölner Clownschule", "https://clowns-schule.de/", target: "_blank" %> absolviert.
+  </p>
+  <p>
+    🎈Zahlreiche Aufführungen konnte ich mit meinem Clown-Ensemble "Zambalas" genießen<br/>
+    🎈8 Jahre durfte ich Vorstandsmitglied des Vereins "Clown trifft Mensch e. V." sein<br/>
+    🎈Meine weiteren beruflichen Qualifikationen sind: Diplom-Verwaltungswirtin, Reiki-Meisterin, Yoga-Lehrerin
+  </p>
+
+
+  <br/><br/><br/>
+</section>
+
+<hr class="dotted"/>
+
+<!-- Referenzen & Über Sandra -->
+<section class="about-section">
+  <h3 class="blue">Hier erzähle ich etwas über mich !️</h3>
+  <div class="about-grid">
+
+    <!-- Referenzen -->
+    <div class="about-card">
+      <div class="about-card__header">
+        <div class="about-card__icon">
+          <%= inline_svg("clown-96.svg") %>
+        </div>
+        <h2 class="blue">Meine Referenzen</h2>
+      </div>
+
+      <div class="about-card__content">
+        <ul class="reference-list">
+          <li>Anna Haag Mehrgenerationenhaus Stuttgart</li>
+          <li>Arbeitskreis Zahngesundheit Wuppertal</li>
+          <li>AWO Seniorenzentrum Stadt Leverkusen</li>
+          <li>Comedia Theater Köln</li>
+          <li>Fitz Theater Düsseldorf</li>
+          <li>Helfende Hände e. V. Stuttgart</li>
+          <li>Hospiz Stuttgart</li>
+          <li>Innere Mission München</li>
+          <li>Jule Freimann Kindergarten München</li>
+          <li>Kindergarten St. Aldegundis Leverkusen</li>
+          <li>Kinderhaus St. Anna Germering</li>
+          <li>Kinder-und Jugendtreff Hasenbergl 's Dülfer München</li>
+          <li>Kunst und Spiel München</li>
+          <li>LAGZ</li>
+          <li>Lebenshilfe Stuttgart</li>
+          <li>MFZ Münchner Förderzentrum GmbH</li>
+          <li>Naturkindergarten Fasanerie München</li>
+          <li>PSD Bank Stuttgart</li>
+          <li>Siaf e. V. München</li>
+          <li>Stadtverwaltung Wuppertal</li>
+          <li>Tagesmutter-Börse der Caritas Stuttgart</li>
+          <li>Uniklinik Düsseldorf</li>
+          <li>Verein für alleinerziehende Mütter und Väter e. V. München</li>
+          <li>VHS Gröbenzell, VHS Olching VHS, München Nord</li>
+          <li>wellcome München</li>
+          <li>Weltkindertag Köln</li>
+        </ul>
+
+        <div class="info-box info-box--highlight">
+          <h4>💪 Mama Kraftplatz</h4>
+          <p>Sandra Cardamone hat noch einen anderen Webauftritt:</p>
+          <p><%= link_to 'www.mamakraftplatz.de', 'https://www.mamakraftplatz.de',
+                         target: '_blank', class: 'link-primary' %></p>
+          <p class="small">
+            <strong>Themen:</strong> Mama in Alltag • Mama mit Kindern •
+            Vitalität verbessern • Dein Mindset
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Über Sandra & Feedback -->
+    <div class="about-card">
+      <div class="about-card__header">
+        <div class="about-card__icon">
+          <%= inline_svg("clown-96.svg") %>
+        </div>
+        <h2 class="blue">Über die Kursleiterin</h2>
+      </div>
+
+      <div class="about-card__content">
+        <h3>Clown Confetti und Signore Confusione...</h3>
+        <p>
+          Nach meinem Online-Basiskurs "Entdecke den Clown in Dir" habe ich ein Jahr später
+          den nagelneuen Online Kurs <%= link_to 'Entdecke den Clown in Dir', clownschule_online_path(anchor: "clown-entdecken") %>
+          ins Leben gerufen.
+        </p>
+        <p>
+          Die Arbeit der <span class="mark">KlinikClowns</span> ist wertvoll für
+          Behinderteneinrichtungen, Seniorenresidenzen, Kliniken und Hospize. Die Arbeit macht
+          den Clown (w, m, d) glücklich und bietet die Möglichkeit auf sinnvolle Weise Geld zu
+          verdienen. Mich als Clown auszudrücken <span class="mark">befreit und erfreut mich</span>
+          auf eine tiefe und entzückende Weise.
+        </p>
+
+        <hr class="dotted"/>
+        <br/>
+        <h3 class="blue">Teilnehmer/innen Kurs Feedback...</h3>
+
+        <div class="testimonials">
+          <blockquote class="testimonial">
+            <p>
+              "Es war nicht leicht, über meinen Schatten zu springen. Aber es hat sich gelohnt.
+              Ich fühle mich erfrischt und habe so viel gelacht, wie schon seit Jahren nicht mehr."
+            </p>
+          </blockquote>
+
+          <blockquote class="testimonial">
+            <p>
+              "Um ehrlich zu sein, hatte ich Bedenken, weil ich sehr introvertiert bin. Sandra hat
+              eine schöne Art zu zeigen, dass der Clown unschuldig und völlig harmlos ist. Das hat
+              mich berührt und ich hatte den ersten Kontakt zu meinem Clown. Eine sehr schöne
+              Begegnung. Absolut bereichernd."
+            </p>
+          </blockquote>
+
+          <blockquote class="testimonial">
+            <p>
+              "Ich habe das Programm geschenkt bekommen. Konnte damit zunächst gar nichts anfangen.
+              Aber Sandra in Aktion zu sehen hat mir so gut gefallen, dass ich unbedingt den Clown
+              in mein Leben bringen will."
+            </p>
+          </blockquote>
+
+          <blockquote class="testimonial">
+            <p>
+              "Ich habe schon mehrere Clown-Kurse gemacht. Manchmal sind Clowns so aufgesetzt. Das
+              mag ich überhaupt nicht. Bei Sandras Arbeit gefällt mir, dass sie den authentischen
+              Clown zeigt. Eine hohe Kunst und wunderschön."
+            </p>
+          </blockquote>
+
+          <blockquote class="testimonial">
+            <p>
+              "Ein absolut empfehlenswertes Programm nicht nur für Einsteiger. Ich bin sicher,
+              dass auch Profi-Clowns die ein oder andere Anregung mitnehmen."
+            </p>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="dotted"/>
+
+<!-- Bücher & Presse -->
+<section class="about-section">
+  <div class="about-grid about-grid--2col">
+
+    <!-- Bücher -->
+    <div class="about-card about-card--compact">
+      <div class="about-card__header">
+        <div class="about-card__icon">
+          <%= inline_svg("clown-96.svg") %>
+        </div>
+        <h2 class="blue">Bücher bei Amazon</h2>
+      </div>
+
+      <div class="about-card__content">
+        <ul class="book-list">
+          <li>
+            <a href="https://amzn.to/3VRVFCq" target="_blank" rel="noopener">
+              📚 Der Clown in uns. Humor und die Kraft des Lachens
+            </a>
+          </li>
+          <li>
+            <a href="https://amzn.to/3xmYxNH" target="_blank" rel="noopener">
+              📚 Trotz allem - Gardi Hutter: Biografie
+            </a>
+          </li>
+          <li>
+            <a href="https://amzn.to/43MeKYT" target="_blank" rel="noopener">
+              📚 Dimitri - Der Clown in mir
+            </a>
+          </li>
+          <li>
+            <a href="https://amzn.to/3POrEzY" target="_blank" rel="noopener">
+              📚 Der Clown: Geschichte einer Gestalt
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Presse -->
+    <div class="about-card about-card--compact">
+      <div class="about-card__header">
+        <div class="about-card__icon">
+          <%= inline_svg("clown-96.svg") %>
+        </div>
+        <h2 class="blue">Clownschule Confetti in der Presse</h2>
+      </div>
+
+      <div class="about-card__content">
+        <ul class="press-list">
+          <li>
+            <a href="https://www.die-kunst-zu-leben.de/clown-trifft-mensch-e-v/"
+               target="_blank" rel="noopener">
+              📰 Die Kunst zu Leben
+            </a>
+          </li>
+          <li>
+            <a href="https://www.stuttgarter-zeitung.de/inhalt.s-mitte-ein-clown-laesst-sich-nicht-so-leicht-aufwecken.fa40d222-fe61-4f3a-8980-454ea834d818.html"
+               target="_blank" rel="noopener">
+              📰 Stuttgarter Zeitung - Ein Clown lässt sich nicht so leicht aufwecken
+            </a>
+          </li>
+          <li class="press-image">
+            <strong>Hallo München</strong>
+            <%= image_tag 'hallo_m.webp', alt: 'Hallo München', class: 'press-img' %>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>

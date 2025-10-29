@@ -1,7 +1,8 @@
 class Movie < ApplicationRecord
+  validates :slug, presence: true
+
   def to_param
     return nil unless persisted?
-
-    [ id, slug ].join("-")
+    "#{id}-#{slug}"
   end
 end

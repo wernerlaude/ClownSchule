@@ -5,8 +5,19 @@ class PagesController < ApplicationController
   end
 
   def fragen
+    @contact = Contact.new
+    @contact.textcaptcha
   end
 
   def about
   end
+
+  def impressum
+
+  end
+
+  def datenschutz
+
+  end
+
 end

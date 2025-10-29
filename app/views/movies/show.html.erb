@@ -1,1 +1,57 @@
-movies index
+<section class="page-intro page-intro--compact">
+  <h1><%= @movie.title %></h1>
+  <p class="lead"><%= @movie.beschreibung %></p>
+</section>
+
+<section class="video-detail">
+  <div class="video-detail__container">
+
+    <!-- Video Player -->
+    <div class="video-detail__player">
+      <div class="video-wrapper">
+        <video controls controlsList="nodownload" preload="metadata">
+          <source src="https://www.clownschule-confetti.de/<%= @movie.url %>" type="video/mp4">
+          Dein Browser unterstützt leider keine Videos.
+        </video>
+      </div>
+    </div>
+
+    <!-- Video Info -->
+    <div class="video-detail__info">
+      <div class="info-card">
+        <div class="info-card__icon">
+          <%= inline_svg("konfetti-tuete.svg") %>
+        </div>
+
+        <div class="info-card__content">
+          <h2 class="blue">Über dieses Video</h2>
+
+          <% if @movie.inhalt.present? %>
+            <div class="video-description">
+              <%= simple_format(@movie.inhalt) %>
+            </div>
+          <% end %>
+
+          <div class="video-meta">
+            <p class="video-meta__item">
+              <strong>📹 Titel:</strong> <%= @movie.title %>
+            </p>
+            <% if @movie.beschreibung.present? %>
+              <p class="video-meta__item">
+                <strong>🎯 Thema:</strong> <%= @movie.beschreibung %>
+              </p>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <div class="video-navigation">
+        <%= link_to videos_mit_dem_clown_path, class: "btn btn--outline" do %>
+          ← Alle Videos ansehen
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+</section>

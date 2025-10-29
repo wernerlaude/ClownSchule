@@ -1,0 +1,13 @@
+Neue Kontaktanfrage
+
+Name: <%= @contact.name %>
+E-Mail: <%= @contact.email %>
+<% if @contact.telefon.present? %>Telefon: <%= @contact.telefon %><% end %>
+Betreff: <%= @contact.betreff %>
+
+Nachricht:
+<%= @contact.message %>
+
+---
+Gesendet über das Kontaktformular von clownschule-confetti.de
+<%= Time.current.strftime("%d.%m.%Y um %H:%M Uhr") %>

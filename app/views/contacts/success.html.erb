@@ -1,0 +1,8 @@
+<%= turbo_frame_tag "contacts_frame" do %>
+  <div class="success-message">
+    <div class="success-icon">✓</div>
+    <h3>Deine Angaben wurden erfolgreich gesendet.</h3>
+    <p>Vielen Dank!<br/> Falls gewünscht melde ich mich zeitnah bei dir…</p>
+    <%= link_to "← Zurück zur Startseite", root_path, class: "btn btn--primary" %>
+  </div>
+<% end %>

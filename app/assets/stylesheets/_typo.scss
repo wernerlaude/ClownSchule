@@ -42,6 +42,30 @@ p b {
   font-weight: 600;
 }
 
+.content p {
+  a, a:visited {
+    position: relative;
+    color: var(--blau-gruen);
+    font-weight: 500;
+    text-decoration: none;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0; // Startet unsichtbar
+      height: 2px;
+      background-color: var(--gelb); // Oder var(--color-accent)
+      transition: width var(--transition-speed) ease;
+    }
+
+    &:hover::after {
+      width: 100%; // Wächst von links nach rechts
+    }
+  }
+}
+
 span.regenbogen {
   background-image: linear-gradient(to left, violet, indigo, blue, green, orange, red);
   -webkit-background-clip: text;

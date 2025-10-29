@@ -1,0 +1,115 @@
+/* _payments.scss */
+/* Stripe Payment Styles */
+
+.payment-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+
+  .btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+
+    .btn-text {
+      font-weight: 600;
+    }
+
+    .btn-price {
+      font-size: 1.125rem;
+      font-weight: 700;
+    }
+  }
+}
+
+// Success & Cancel Messages
+.success-message,
+.cancel-message {
+  background: var(--color-background-light);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-md);
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.success-message {
+  border: 2px solid var(--color-primary);
+
+  .success-icon-small {
+    width: 60px;
+    height: 60px;
+    background: var(--color-primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin: 0 auto var(--spacing-md);
+    animation: scaleIn 0.5s ease-out;
+  }
+
+  h4 {
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  p {
+    margin-bottom: var(--spacing-md);
+  }
+}
+
+.cancel-message {
+  border: 2px solid #ef4444;
+
+  .cancel-icon-small {
+    width: 60px;
+    height: 60px;
+    background: #ef4444;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin: 0 auto var(--spacing-md);
+  }
+
+  h4 {
+    color: #dc2626;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  p {
+    margin-bottom: var(--spacing-md);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+// Button Styling
+.btn--small {
+  padding: var(--spacing-xs) var(--spacing-md);
+  font-size: 0.9rem;
+}
+
+.payment-features {
+  list-style: none;
+  padding: 0;
+  margin: var(--spacing-md) 0 0;
+
+  li {
+    padding: var(--spacing-xs) 0;
+    font-size: 0.9rem;
+    color: var(--color-text);
+  }
+}

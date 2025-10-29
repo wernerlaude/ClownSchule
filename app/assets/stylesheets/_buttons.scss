@@ -15,7 +15,8 @@
 
   &--primary {
     background: var(--color-primary);
-    color: white;
+    color: white !important;
+    border: none !important;
 
     &:hover {
       background: hsl(99, 52%, 47%); // 10% dunkler

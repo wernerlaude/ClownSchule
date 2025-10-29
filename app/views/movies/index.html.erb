@@ -1,1 +1,60 @@
-movies index
+<section class="page-intro">
+  <h1>Clownschule Confetti - Video's</h1>
+
+
+  <%= image_tag "video-clown.webp", alt: "Clownschule Confetti Video's", title: "Clownschule Confetti - Video's",
+                class: "img-fluid float-end shadow-sm" %>
+  <p class="lead">Informationen und Lustiges ❣️</p>
+  <p>
+    Clowns sind in erster Linie dafür bekannt, Menschen zum Lachen zu bringen. Ihr Humor kann sich von slapstickartigen
+    physischen Komödien bis hin zu subtilen Wortspielen und absurdem Verhalten erstrecken.
+  </p>
+  <p>
+    Oft verwenden Clowns körperliche Bewegungen, Gesten und Mimik, um ihre Komödie zu vermitteln. Sie können
+    übertriebene Bewegungen machen, stolpern, fallen oder andere Slapstick-Elemente einbauen, um das Publikum zu
+    amüsieren.
+  </p>
+  <p>
+    Unsere Clownschule Confetti Video' können lustige und herzerwärmende Erfahrung für dich sein. Es ist eine besondere
+    Gelegenheit, Freude zu verbreiten und die Welt ein wenig bunter zu machen.
+    Es geht darum, sich selbst zu akzeptieren und das <span class="mark">Leben mit einem Lächeln</span> anzunehmen.
+  </p>
+
+  <h3 class="blue">Folge der Freude und entdecke ungeahnte Leichtigkeit!</h3>
+<br /><br /><br />
+</section>
+
+<hr class="dotted"/>
+
+<section class="videos-section">
+  <div class="videos-grid">
+    <% @movies.each do |movie| %>
+      <article class="video-card">
+        <div class="video-card__icon">
+          <%= inline_svg("konfetti-tuete.svg", class: "video-card__svg") %>
+        </div>
+
+        <div class="video-card__content">
+          <h3 class="video-card__title"><%= movie.title %></h3>
+
+          <% if movie.beschreibung.present? %>
+            <p class="video-card__description">
+              <%= movie.beschreibung %>
+            </p>
+          <% end %>
+        </div>
+
+        <div class="video-card__footer">
+          <%= link_to "Video ansehen", movie_path(movie), class: "btn btn--primary btn--full" %>
+        </div>
+
+      </article>
+    <% end %>
+  </div>
+
+  <% if @movies.empty? %>
+    <div class="empty-state">
+      <p>🎬 Noch keine Videos verfügbar. Schau bald wieder vorbei!</p>
+    </div>
+  <% end %>
+</section>

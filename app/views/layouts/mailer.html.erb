@@ -1,13 +1,75 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <style>
-      /* Email styles need to be inline */
-    </style>
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title><%= @email_title || "Clownschule Confetti" %></title>
+</head>
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f5f5f5;">
 
-  <body>
-    <%= yield %>
-  </body>
+<!-- Wrapper -->
+<table role="presentation" style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;">
+  <tr>
+    <td align="center" style="padding: 40px 20px;">
+
+      <!-- Container -->
+      <table role="presentation" style="width: 100%; max-width: 600px; border-collapse: collapse; background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+
+        <!-- Header mit Regenbogen-Farben -->
+        <tr>
+          <td style="background: hsl(41, 100%, 50%);; padding: 30px; text-align: center; border-radius: 12px 12px 0 0;">
+            <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 700; text-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+              🎭 Clownschule Confetti
+            </h1>
+            <% if @email_subtitle.present? %>
+              <p style="margin: 8px 0 0; color: #ffffff; font-size: 16px; font-weight: 500;">
+                <%= @email_subtitle %>
+              </p>
+            <% end %>
+          </td>
+        </tr>
+
+        <!-- Main Content -->
+        <tr>
+          <td style="padding: 30px;">
+            <%= yield %>
+          </td>
+        </tr>
+
+        <!-- Footer -->
+        <tr>
+          <td style="padding: 20px 30px; background: #f8f9fa; text-align: center; border-radius: 0 0 12px 12px;">
+            <p style="margin: 0 0 8px; color: #6c757d; font-size: 13px; line-height: 1.5;">
+              <strong style="color: #495057;">Clownschule Confetti</strong><br/>
+              Sandra Cardamone<br/>
+              <a href="mailto:sandra@clownschule-confetti.de" style="color: #4a9d9c; text-decoration: none;">sandra@clownschule-confetti.de</a>
+            </p>
+            <p style="margin: 8px 0 0; color: #adb5bd; font-size: 12px;">
+              <%= Time.current.strftime("%d.%m.%Y um %H:%M Uhr") %>
+            </p>
+          </td>
+        </tr>
+
+      </table>
+
+      <!-- Email Footer Text -->
+      <table role="presentation" style="width: 100%; max-width: 600px; border-collapse: collapse; margin-top: 20px;">
+        <tr>
+          <td style="text-align: center; padding: 0 20px;">
+            <p style="margin: 0 0 8px; color: #6c757d; font-size: 12px; line-height: 1.5;">
+              <a href="https://clownschule-confetti.de" style="color: #4a9d9c; text-decoration: none;">www.clownschule-confetti.de</a>
+            </p>
+            <p style="margin: 0; color: #adb5bd; font-size: 11px;">
+              © <%= Time.current.year %> Clownschule Confetti - Alle Rechte vorbehalten
+            </p>
+          </td>
+        </tr>
+      </table>
+
+    </td>
+  </tr>
+</table>
+
+</body>
 </html>

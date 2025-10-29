@@ -43,8 +43,8 @@
 
     &.float-end {
       float: right;
-      max-width: 34rem;
-      margin: var(--spacing-lg);
+      max-width: 32rem;
+      margin: var(--spacing-md);
     }
   }
 
@@ -55,9 +55,108 @@
 }
 
 .footer {
-  grid-area: footer;
-  background-color: var(--color-footer-bg);
-  padding: var(--spacing-lg) var(--content-padding);
+  background-color: var(--color-primary);
+  color: var(--color-weiss);
+  padding: 3rem 2rem;
+
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+
+  .footer-column {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .footer-icon {
+    font-size: 2rem;
+    line-height: 1;
+  }
+
+  .footer-content {
+    flex: 1;
+
+    h4 {
+      margin: 0 0 1rem 0;
+      font-size: 1.1rem;
+      color: var(--gelb);
+    }
+
+    p {
+      margin: 0;
+      line-height: 1.8;
+    }
+
+    a {
+      color: var(--color-weiss);
+      text-decoration: none;
+      display: block;
+      margin-bottom: 0.5rem;
+      transition: color var(--transition-speed) ease;
+
+      &:hover {
+        color: var(--gelb);
+      }
+    }
+  }
+
+  .social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    fill: var(--color-weiss);
+    transition: all var(--transition-speed) ease;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    &:hover {
+      background-color: var(--gelb);
+      fill: var(--color-primary);
+      transform: translateY(-3px);
+    }
+
+    &.youtube:hover {
+      background-color: #ff0000;
+      fill: var(--color-weiss);
+    }
+
+    &.facebook:hover {
+      background-color: #1877f2;
+      fill: var(--color-weiss);
+    }
+
+    &.tiktok:hover {
+      background-color: #000000;
+      fill: var(--color-weiss);
+    }
+
+    &.linkedin:hover {
+      background-color: #0077b5;
+      fill: var(--color-weiss);
+    }
+  }
 }
 
 .grid-auto {
@@ -125,6 +224,145 @@
 
     p {
       margin: 0;
+    }
+  }
+}
+
+.datenschutz-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+
+  .datenschutz-grid {
+    display: grid;
+    grid-template-columns: 2.5fr 1fr;
+    gap: 4rem;
+
+    @media (max-width: 968px) {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+
+      .datenschutz-sidebar {
+        order: -1; // Sidebar kommt auf Mobile zuerst
+      }
+    }
+  }
+
+  .datenschutz-main {
+    h2 {
+      color: var(--color-primary);
+      margin-bottom: 2rem;
+      font-size: 1.8rem;
+    }
+
+    h3 {
+      color: var(--color-primary);
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    h4 {
+      color: var(--color-secondary);
+      margin-top: 1.5rem;
+      margin-bottom: 0.8rem;
+      font-size: 1.2rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      line-height: 1.8;
+      color: var(--color-text);
+    }
+
+    ul {
+      margin: 1rem 0 1.5rem 2rem;
+      line-height: 1.8;
+
+      li {
+        margin-bottom: 0.5rem;
+      }
+
+      &.index {
+        list-style: none;
+        margin-left: 0;
+
+        li {
+          margin-bottom: 0.3rem;
+        }
+      }
+    }
+
+    a {
+      color: var(--blau-gruen);
+      font-weight: 500;
+      text-decoration: none;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: var(--gelb);
+        transition: width var(--transition-speed) ease;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+    }
+
+    .generator-link {
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: var(--color-muted);
+    }
+  }
+
+  .datenschutz-sidebar {
+    .cookie-info {
+      position: sticky;
+      top: 100px;
+      background-color: var(--color-light-bg);
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+      h2 {
+        color: var(--color-primary);
+        margin-bottom: 1.5rem;
+        font-size: 1.4rem;
+      }
+
+      h4 {
+        color: var(--color-secondary);
+        margin-top: 1.5rem;
+        margin-bottom: 0.8rem;
+        font-size: 1.1rem;
+      }
+
+      p {
+        margin-bottom: 1rem;
+        line-height: 1.8;
+        font-size: 0.95rem;
+      }
+
+      .highlight {
+        color: var(--blau-gruen);
+        font-weight: 600;
+        margin-top: 1.5rem;
+      }
+
+      .summary {
+        font-style: italic;
+        color: var(--color-muted);
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+      }
     }
   }
 }

@@ -21,4 +21,7 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+Sandbox:
+pk_test_51SKcS8RscjamN1rxaS4BqlbXaaOn5zytykib6cxKPLqeoHWpKh1g4zeHO7MYzvsPkqJ8yzEhowmmv6JZ3ab0TLa700jpDUQ4nH
+
+sk_test_51SKcS8RscjamN1rxJV2l3gdiypBGNcvbKCgvVJy30bLSqS4nxqJEdyIaDTBgkC0U4Nqxn51zUejSP8jUlHx9kncx00FLNOrL6r

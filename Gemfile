@@ -36,3 +36,5 @@ gem "sass-rails", "~> 6.0.0"
 gem "mailgun-ruby", "~>1.2.5"
 gem "view_component"
 gem "stripe"
+gem "acts_as_textcaptcha"
+

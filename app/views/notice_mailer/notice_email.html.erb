@@ -1,0 +1,77 @@
+<% @email_subtitle = "Neue Kontaktanfrage" %>
+
+<!-- Intro Alert -->
+<div style="background: #fef9e7; border-left: 4px solid #e8a03d; padding: 16px; border-radius: 4px; margin-bottom: 24px;">
+  <p style="margin: 0; color: #875c0c; font-size: 15px; line-height: 1.5;">
+    <strong>🎉 Hurra!</strong> Du hast eine neue Nachricht über das Kontaktformular erhalten.
+  </p>
+</div>
+
+<!-- Contact Details Table -->
+<table role="presentation" style="width: 100%; border-collapse: collapse; margin-bottom: 24px;">
+
+  <!-- Name -->
+  <tr>
+    <td style="padding: 12px; background: #f8f9fa; border-bottom: 1px solid #e9ecef; width: 35%;">
+      <strong style="color: #495057; font-size: 14px;">👤 Name:</strong>
+    </td>
+    <td style="padding: 12px; background: #f8f9fa; border-bottom: 1px solid #e9ecef;">
+      <span style="color: #212529; font-size: 15px;"><%= @contact.name %></span>
+    </td>
+  </tr>
+
+  <!-- E-Mail -->
+  <tr>
+    <td style="padding: 12px; background: #ffffff; border-bottom: 1px solid #e9ecef;">
+      <strong style="color: #495057; font-size: 14px;">📧 E-Mail:</strong>
+    </td>
+    <td style="padding: 12px; background: #ffffff; border-bottom: 1px solid #e9ecef;">
+      <a href="mailto:<%= @contact.email %>" style="color: #4a9d9c; text-decoration: none; font-size: 15px;">
+        <%= @contact.email %>
+      </a>
+    </td>
+  </tr>
+
+  <!-- Telefon (falls vorhanden) -->
+  <% if @contact.telefon.present? %>
+    <tr>
+      <td style="padding: 12px; background: #f8f9fa; border-bottom: 1px solid #e9ecef;">
+        <strong style="color: #495057; font-size: 14px;">📱 Telefon:</strong>
+      </td>
+      <td style="padding: 12px; background: #f8f9fa; border-bottom: 1px solid #e9ecef;">
+        <a href="tel:<%= @contact.telefon %>" style="color: #4a9d9c; text-decoration: none; font-size: 15px;">
+          <%= @contact.telefon %>
+        </a>
+      </td>
+    </tr>
+  <% end %>
+
+  <!-- Betreff -->
+  <tr>
+    <td style="padding: 12px; background: #ffffff; border-bottom: 1px solid #e9ecef;">
+      <strong style="color: #495057; font-size: 14px;">🎯 Betreff:</strong>
+    </td>
+    <td style="padding: 12px; background: #ffffff; border-bottom: 1px solid #e9ecef;">
+      <span style="display: inline-block; background: #e7f5e7; color: #2d7a2d; padding: 4px 12px; border-radius: 20px; font-size: 14px; font-weight: 600;">
+        <%= betreff_label(@contact.betreff) %>
+      </span>
+    </td>
+  </tr>
+
+</table>
+
+<!-- Message Box -->
+<div style="background: #f8f9fa; padding: 20px; border-radius: 8px; border-left: 4px solid #6ec26e; margin-bottom: 24px;">
+  <h3 style="margin: 0 0 12px; color: #495057; font-size: 16px; font-weight: 600;">
+    💬 Nachricht:
+  </h3>
+  <div style="color: #212529; font-size: 15px; line-height: 1.6; white-space: pre-wrap;"><%= @contact.message %></div>
+</div>
+
+<!-- CTA Button -->
+<div style="text-align: center;">
+  <a href="mailto:<%= @contact.email %>?subject=Re: <%= betreff_label(@contact.betreff) %>"
+     style="display: inline-block; background: linear-gradient(135deg, #6ec26e 0%, #4a9d9c 100%); color: #ffffff; text-decoration: none; padding: 14px 32px; border-radius: 25px; font-weight: 600; font-size: 16px; box-shadow: 0 4px 8px rgba(110, 194, 110, 0.3);">
+    📧 Direkt antworten
+  </a>
+</div>

@@ -12,7 +12,7 @@
   /* Farben - Komponenten */
   --color-primary: var(--green);
   --color-primary-pale: hsla(99, 52%, 57%, 0.2);
-  --color-accent: hsl(0, 67%, 54%);
+  --color-accent: var(--gelb);
   --color-body-bg: var(--gelb);
   --color-content-bg: var(--weiss);
   --color-weiss: var(--weiss);
@@ -28,7 +28,7 @@
   --color-background-medium: #e1e1e1;
 
   /* Layout */
-  --content-max-width: 70rem;
+  --content-max-width: 74rem;
   --content-padding: 1rem;
   --header-height: 3rem;
   --nav-width: 280px;

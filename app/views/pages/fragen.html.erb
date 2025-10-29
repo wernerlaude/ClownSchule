@@ -1,1 +1,121 @@
-fragen
+<section class="page-intro">
+  <h1>Kontakt zum Clown</h1>
+  <p class="lead">Ich freue mich auf deine Nachricht!</p>
+
+  <div class="flex-intro">
+    <div class="flex-intro__icon">
+      <%= inline_svg("clown-96.svg") %>
+    </div>
+    <div class="flex-intro__text">
+      <p><strong>So erreichst du mich:</strong></p>
+
+      <ul>
+        <li>
+          <strong>Persönliche Beratung:</strong> Ich beantworte gerne all deine Fragen zu den
+          Workshops, Coaching und Performance-Feedback.
+        </li>
+        <li>
+          <strong>Spontan buchen:</strong> Du möchtest direkt loslegen? Buche deinen Wunschkurs
+          einfach und sicher über Stripe.
+        </li>
+        <li>
+          <strong>Unverbindlich anfragen:</strong> Schreibe mir einfach eine Nachricht und wir
+          finden gemeinsam das passende Angebot für dich.
+        </li>
+      </ul>
+
+      <p>
+        <span class="mark">Egal ob telefonisch, per E-Mail oder direkt über das Formular</span> –
+        ich freue mich darauf, von dir zu hören!
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- Kontakt-Optionen -->
+<section class="contact-options">
+  <div class="contact-grid">
+    <!-- Kontaktformular -->
+    <div class="contact-box contact-box--form">
+      <h2 class="blue">Schreibe mir eine Nachricht</h2>
+      <%= render "contacts/form",
+                 contact: @contact,
+                 submit_text: "Nachricht senden" %>
+    </div>
+
+    <!-- Direktkontakt & Stripe -->
+    <div class="contact-sidebar">
+      <!-- Direktkontakt -->
+      <div class="contact-box contact-box--info">
+        <h3>📞 Direktkontakt</h3>
+        <p><strong>Telefon:</strong><br/>
+          <a href="tel:+4912345678">+49 173 962 9753</a></p>
+
+        <p><strong>E-Mail:</strong><br/>
+          <a href="mailto:cardamonesandra@gmail.com">cardamonesandra@gmail.com</a></p>
+
+        <p class="highlight">
+          <small>Rufe mich gerne unverbindlich und kostenlos an!</small>
+        </p>
+      </div>
+
+      <!-- Stripe Buchung -->
+      <div class="contact-box contact-box--stripe">
+        <h3>💳 Kurse direkt buchen</h3>
+        <p>Du weißt schon, welcher Kurs der richtige für dich ist? Dann buche jetzt direkt und sicher!</p>
+
+        <!-- Turbo Frame für Payment Status -->
+        <% if params[:payment] == "success" %>
+          <%= turbo_frame_tag "payment_result" do %>
+            <div class="success-message">
+              <div class="success-icon-small">✓</div>
+              <h4>Zahlung erfolgreich!</h4>
+              <p>Vielen Dank! Du erhältst in Kürze eine E-Mail mit allen Details zu deinem Kurs.</p>
+              <%= link_to "← Zurück", kontakt_zum_clown_path, class: "btn btn--outline btn--small" %>
+            </div>
+          <% end %>
+        <% elsif params[:payment] == "cancelled" %>
+          <%= turbo_frame_tag "payment_result" do %>
+            <div class="cancel-message">
+              <div class="cancel-icon-small">✕</div>
+              <h4>Zahlung abgebrochen</h4>
+              <p>Kein Problem! Versuch es einfach nochmal oder kontaktiere mich bei Fragen.</p>
+              <%= link_to "← Zurück zur Auswahl", kontakt_zum_clown_path, class: "btn btn--outline btn--small" %>
+            </div>
+          <% end %>
+        <% else %>
+          <%= turbo_frame_tag "payment_result" do %>
+            <div class="payment-buttons">
+              <%= button_to create_payment_path(product: "clown-entdecken"),
+                            method: :post,
+                            class: "btn btn--primary btn--full",
+                            data: { turbo: false } do %>
+                <span class="btn-text">Clown entdecken</span>
+                <span class="btn-price">55.- €</span>
+              <% end %>
+
+              <%= button_to create_payment_path(product: "klinikclown"),
+                            method: :post,
+                            class: "btn btn--secondary btn--full",
+                            data: { turbo: false } do %>
+                <span class="btn-text">KlinikClown</span>
+                <span class="btn-price">333.- €</span>
+              <% end %>
+
+            </div>
+          <% end %>
+        <% end %>
+
+        <ul class="payment-features">
+          <li>✓ Sichere Zahlung via Stripe</li>
+          <li>✓ Sofortiger Kurszugang</li>
+          <li>✓ Kreditkarte oder SEPA</li>
+          <li>✓ 14 Tage Geld-zurück-Garantie</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="dotted"/>

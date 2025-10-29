@@ -8,7 +8,6 @@
     </div>
     <div class="flex-intro__text">
       <p><strong>In den Online Workshops meiner Clownschule Confetti lernst du:</strong></p>
-
       <ul>
         <li>
           <strong>Grundlagen der Clown-Comedy:</strong> Von lustigen Grimassen bis hin zu Slapstick
@@ -23,7 +22,6 @@
           lerne, wie du mit deiner einzigartigen Persönlichkeit und deinem Humor das Publikum begeistern kannst.
         </li>
       </ul>
-
       <p>
         Egal, ob du bereits Erfahrung als Clown hast oder völlig neu in diesem Bereich bist,
         <span class="mark">Sandra Cardamone steht dir mit Rat und Tat zur Seite</span>, um deine
@@ -40,6 +38,10 @@
     <div class="workshop-detail__header-text">
       <h2 class="blue h4">Entdecke den Clown in Dir</h2>
       <p class="lead">Hebe Deine Lebensfreude auf ein neues Level!</p>
+      <p>Manchmal braucht es nur einen kleinen Schritt, um das Lachen wieder in dein Leben einzuladen.
+        In diesem Kurs begibst du dich auf eine spielerische Entdeckungsreise zu deinem inneren Clown. Du lernst, dich
+        selbst mit liebevoller Neugier zu betrachten, Spontaneität zuzulassen und das Leben wieder leicht zu nehmen.
+        Ein Kurs voller Humor, Präsenz und Herz – für alle, die sich selbst neu erleben wollen.</p>
     </div>
     <%= image_tag "entdecke-clown.webp", alt: "Glücklicher Clown",
                   class: "workshop-detail__header-image" %>
@@ -52,13 +54,14 @@
         Unsere Fehler und Unzulänglichkeiten sind für Clowns die größten Schätze. Dinge,
         die wir im Alltag nicht mögen z. B. das Chaos ist absolut lustig in der Clown-Interpretation.
       </p>
+      <p>Deinen Platz sichern, nur 55.- €</p>
       <p class="highlight">
         <strong>Begegne noch heute der Kraft des Lachens!</strong>
       </p>
     </div>
 
     <div class="workshop-detail__intro-cta">
-      <%= link_to 'Zum Kurs anmelden', '#', class: "btn btn--primary" %>
+      <%= link_to 'Zum Kurs anmelden', kontakt_zum_clown_path, class: "btn btn--primary" %>
     </div>
   </div>
 
@@ -114,6 +117,12 @@
     <div class="workshop-detail__header-text">
       <h2 class="blue h4">Die achtsame Kunst eines Klinik Clowns</h2>
       <p class="lead">Bringe Freude und Heilung in Krankenhäuser und Pflegeeinrichtungen</p>
+      <p>Lachen ist Medizin für die Seele. In diesem Kurs lernst du, wie du als Klinikclown Menschen berühren,
+        aufmuntern und Herzenswärme schenken kannst.
+        Du erfährst, wie Humor in sensiblen Momenten wirkt, wie du authentisch präsent bleibst und mit kleinen Gesten
+        große Wirkung erzielst.
+        Ein tiefgehender Kurs für alle, die mit Mitgefühl, Leichtigkeit und einem roten Herzen im Gesicht echte Heilung
+        schenken möchten.</p>
     </div>
     <%= image_tag "klinik-clown.webp", alt: "Klinikclown bei der Arbeit",
                   class: "workshop-detail__header-image" %>
@@ -126,13 +135,15 @@
         was bei kranken Kindern und älteren Menschen besonders wichtig ist. Klinik-Clowns bieten einen
         herzlichen Kontakt an und schaffen eine positive Atmosphäre, die Heilung und Genesung fördern soll.
       </p>
+      <p>Deinen Platz sichern, nur 333.- €</p>
       <p class="highlight">
         <strong>Werde ein Botschafter der Freude in medizinischen Einrichtungen!</strong>
       </p>
+
     </div>
 
     <div class="workshop-detail__intro-cta">
-      <%= link_to 'Zum KlinikClown-Kurs', '#', class: "btn btn--primary" %>
+      <%= link_to 'Zum KlinikClown-Kurs', kontakt_zum_clown_path, class: "btn btn--primary" %>
     </div>
   </div>
 
@@ -198,13 +209,16 @@
         Einzelarbeit konzipiert. Hier lernst Du Strategien, wie Du Deinen Alltag freudiger gestalten
         kannst. Du arbeitest an Deinem Mindset und kommst Deinen Glaubenssätzen auf die Spur.
       </p>
+      <p>Ziel ist es, eine freudigere Ausrichtung im Leben zu finden und aus negativen Verhaltensmustern auszubrechen.
+        Wir stellen Dir gute Fragen und horchen nach einer Antwort in Dir. Mein Anliegen ist es, Dir Wege aufzuzeigen,
+        wie Du zu mehr Lebensfreude und Gelassenheit finden kannst.</p>
       <p class="highlight">
         <strong>Rufe mich unverbindlich und kostenlos an!</strong>
       </p>
     </div>
 
     <div class="workshop-detail__intro-cta">
-      <%= link_to 'Coaching anfragen', '#', class: "btn btn--primary" %>
+      <%= link_to 'Coaching anfragen', kontakt_zum_clown_path, class: "btn btn--primary" %>
     </div>
   </div>
 
@@ -256,7 +270,7 @@
     </div>
 
     <div class="workshop-detail__intro-cta">
-      <%= link_to 'Feedback anfragen', '#', class: "btn btn--primary" %>
+      <%= link_to 'Feedback anfragen', kontakt_zum_clown_path, class: "btn btn--primary" %>
     </div>
   </div>
 

@@ -3,18 +3,18 @@ Rails.application.routes.draw do
 
   get "clownschule-online", to: "pages#workshops", as: :clownschule_online
 
-  get "frage-den-clown" => "pages#fragen"
+  get "kontakt-zum-clown" => "pages#fragen"
   get "ausbildung-zum-klinikclown" => "pages#klinik"
   get "sandra-cardamone" => "pages#about"
 
-  get "achtsame-kunst-der-klinik-clowns", to: "pages#show_klinik_text"
-  get "clown-coaching-lebenskunst", to: "pages#show_lebenskunst_text"
-  get "regie-text", to: "pages#show_regie_text"
-
-  resources :questions, only: %i[new create]
-  get "questions/success" => "questions#success", as: :success
-
+  resources :contacts, only: [:create]
   resources :movies, only: %i[index show], path: "videos-mit-dem-clown"
+
+  # Stripe Payments
+  post "payments/create", to: "payments#create", as: :create_payment
+  get "payments/success", to: "payments#success", as: :payment_success
+  get "payments/cancel", to: "payments#cancel", as: :payment_cancel
+
 
   get "impressum" => "pages#impressum"
   get "datenschutz" => "pages#datenschutz"
