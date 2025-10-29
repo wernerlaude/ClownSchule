@@ -2,7 +2,7 @@
   <h1>Clownschule Confetti</h1>
   <h2>Entdecke den Clown in Dir</h2>
 
-  <%= image_tag "konfetti-clown.webp", alt: "Clownschule Confetti", title: "Clownschule Confetti - Clown Workshops",
+  <%= image_tag "konfetti-clown-start.webp", alt: "Clownschule Confetti", title: "Clownschule Confetti - Clown Workshops",
                 class: "img-fluid float-end shadow-sm" %>
 
   <h3>Folge der Freude und entdecke ungeahnte Leichtigkeit!</h3>
@@ -24,10 +24,16 @@
 
   <h3 class="blue">Ich möchte dich herzlich zu den Workshops in meine
     <span class="regenbogen"><b>Clownschule Confetti</b></span> einladen!</h3>
-  <p><%#= inline_svg("clown-96.svg", class: "clown-icon") %>
 
-    Wenn du schon immer davon geträumt hast, die Welt mit
-    einem Lächeln zu verzaubern, dann ist dies deine Chance, den Clown in dir zu entdecken und zu entfesseln.</p>
+  <div class="flex-intro">
+    <div class="flex-intro__icon">
+      <%= inline_svg("clown-96.svg") %>
+    </div>
+    <div class="flex-intro__text">
+      <p>Wenn du schon immer davon geträumt hast, die Welt mit
+        einem Lächeln zu verzaubern, dann ist dies deine Chance, den Clown in dir zu entdecken und zu entfesseln.</p>
+    </div>
+  </div>
 
 </section>
 
@@ -43,7 +49,7 @@
   <div class="workshops__grid">
     <!-- Haupt-Kurs (Featured) -->
     <article class="workshop-card workshop-card--featured">
-      <%#= image_tag "clown-kurs-1.jpg", alt: "Entdecke den Clown in dir", class: "workshop-card__image" %>
+      <%= image_tag "card-entdecke.webp", alt: "Entdecke den Clown in dir", class: "workshop-card__image" %>
       <div class="workshop-card__content">
         <span class="workshop-card__badge">Beliebtester Kurs</span>
         <h3 class="workshop-card__title">Entdecke den Clown in Dir</h3>
@@ -53,14 +59,14 @@
         </p>
         <div class="workshop-card__footer">
           <span class="workshop-card__price">Online Kurs</span>
-          <%#= link_to "Mehr erfahren", clown_workshop_path, class: "btn btn--primary" %>
+          <%= link_to "Mehr erfahren", clownschule_online_path(anchor: "clown-entdecken"), class: "btn btn--primary" %>
         </div>
       </div>
     </article>
 
     <!-- Weitere Kurse -->
     <article class="workshop-card">
-      <%#= image_tag "klinikclown.jpg", alt: "Kunst der Klinikclowns", class: "workshop-card__image" %>
+      <%= image_tag "card-clinic.webp", alt: "Kunst der Klinikclowns", class: "workshop-card__image" %>
       <div class="workshop-card__content">
         <span class="workshop-card__badge">Online Kurs</span>
         <h3 class="workshop-card__title">Die achtsame Kunst der Klinik-Clowns</h3>
@@ -69,7 +75,7 @@
           medizinischen Einrichtungen arbeiten.
         </p>
         <div class="workshop-card__footer">
-          <%#= link_to "Klinik Clown Workshop buchen", klinik_workshop_path, class: "btn btn--secondary" %>
+          <%= link_to "Klinik Clown Workshop", clownschule_online_path(anchor: "klinik-clown"), class: "btn btn--secondary" %>
         </div>
       </div>
     </article>
@@ -82,7 +88,7 @@
           für deine Performance und Charakterentwicklung.
         </p>
         <div class="workshop-card__footer">
-          <%#= link_to "Coaching anfragen", coaching_path, class: "btn btn--secondary" %>
+          <%= link_to "Coaching anfragen", clownschule_online_path(anchor: "coaching"), class: "btn btn--secondary" %>
         </div>
       </div>
     </article>
@@ -98,100 +104,47 @@
           <strong>Fragen an mich:</strong> Kostüm, Schminke, Auftreten, Publikum, Gage
         </div>
         <div class="workshop-card__footer">
-          <%#= link_to "Unverbindlich anfragen", feedback_path, class: "btn btn--outline" %>
+          <%= link_to "Unverbindlich anfragen", clownschule_online_path(anchor: "feedback"), class: "btn btn--secondary" %>
         </div>
       </div>
     </article>
-     </div>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut debitis facere fugit minus non nostrum quam reiciendis rem vel vero. Autem blanditiis incidunt repellat. Aliquid delectus facere illum ipsa sequi.</p>
+  </div>
 
-</section>
-
-<!-- Detail Section 2: Klinik Clowns -->
-<section class="workshop-detail" id="klinik-clown">
-  <h1 class="blue h4">Die achtsame Kunst eines Klinik Clowns.</h1>
-  <p>
-    <span class="mark"><b>Klinikclowns</b>:</span> haben ein sehr feines Gefühl für Nähe und Distanz,
-    was bei kranken Kindern und älteren Menschen besonders wichtig ist. Klinik-Clowns bieten einen
-    herzlichen Kontakt an.
-  </p>
-
-  <h2 class="h5 green">Klinikclowns</h2>
-  <p>
-    …sind speziell ausgebildete Künstler, die in Krankenhäusern, Pflegeeinrichtungen und anderen
-    medizinischen Einrichtungen arbeiten, um <span class="mark">Patienten, insbesondere Kinder</span>,
-    sowie deren Familien zu unterstützen und aufzumuntern. Diese Clowns nutzen ihre clownesken
-    Fähigkeiten, um eine positive Atmosphäre zu schaffen, die Heilung und Genesung fördern soll.
-    Hier sind einige Merkmale und Aufgaben von Klinikclowns:
-  </p>
-
-  <h3 class="h5 green">Zauber des Augenblicks</h3>
-  <p>
-    Je nach Befindlichkeit der angespielten Person, Situation und Umfeld erfinden Clowns Lieder,
-    Geschichten, Spiele, pusten einen Luftballon auf, holen lustige Requisiten hervor…
-  </p>
-
-  <p>
-    <b>Klinikclowns</b> verwenden Humor, Musik, Geschichten und Spiele, um Patienten und ihre
-    Familien abzulenken und zu ermutigen. Sie bringen Freude und Lachen in ansonsten stressige
-    und belastende Situationen.
-  </p>
-
-  <p>
-    Die Arbeit ist durchdrungen von Feinfühligkeit, Respekt und Wertschätzung gegenüber dem Kind
-    bzw. dem älteren Menschen.
-  </p>
-
-  <p>
-    <span class="mark">Clowns zeichnen sich durch:</span>
-    Unbekümmertheit, Leichtigkeit und Herzlichkeit aus. In den Augen der Clowns ist jeder
-    Mensch, jeder Stein, jede Blume und jede Wolke einzigartig, vollkommen und ein zu
-    bestaunendes Wunder.
-  </p>
-
-  <%= link_to 'Ausbildungs-Kurs zum KlinikClown', klinikclown_kurs_path,
-              class: "btn btn--primary", target: "_top" %>
 </section>
 
 <hr class="dotted"/>
 
-<!-- Detail Section 3: Clown Coaching -->
-<section class="workshop-detail" id="coaching">
-  <h1 class="h4 blue">Clown Coaching Lebenskünstler</h1>
-  <p>
-    Das Coaching für <span class="mark">angehende Lebenskünstler</span> ist als intensive
-    Einzelarbeit konzipiert. Hier lernst Du Strategien, wie Du Deinen Alltag freudiger gestalten
-    kannst. Du arbeitest an Deinem Mindset und kommst Deinen Glaubenssätzen auf die Spur.
-  </p>
+<!-- TakeAways Section -->
+<section class="takeaways ">
+  <h2 class="blue">Bevor du gehst… nimm noch unsere <span class="regenbogen">TakeAway's</span></h2>
 
-  <h2 class="h5 green">Freudigere Ausrichtung im Leben</h2>
-  <p>
-    Ziel ist es, eine <span class="mark">freudigere Ausrichtung</span> im Leben zu finden und
-    aus negativen Verhaltensmustern auszubrechen. Wir stellen Dir gute Fragen und horchen nach
-    einer Antwort in Dir. Mein Anliegen ist es, Dir Wege aufzuzeigen, wie Du zu mehr Lebensfreude
-    und Gelassenheit finden kannst.
-  </p>
+  <div class="quotes">
+    <blockquote class="quote">
+      <p class="quote__text">Lachen ist Leben und umgekehrt.</p>
+      <footer class="quote__author">— Oskar Wilde</footer>
+    </blockquote>
 
-  <p><b>Rufe mich unverbindlich und kostenlos an.</b></p>
-</section>
+    <blockquote class="quote">
+      <p class="quote__text">Jeder Mensch ist ein Clown, aber nur wenige haben den Mut, es zu zeigen.</p>
+      <footer class="quote__author">— Charlie Rivel</footer>
+    </blockquote>
 
-<hr class="dotted"/>
+    <blockquote class="quote">
+      <p class="quote__text">Ein Tag ohne Lachen ist ein verlorener Tag.</p>
+      <footer class="quote__author">— Charlie Chaplin</footer>
+    </blockquote>
+  </div>
 
-<!-- Detail Section 4: Performance Feedback -->
-<section class="workshop-detail" id="feedback">
-  <h1 class="h4 blue">Clown Performance Feedback</h1>
-  <p>
-    Du bist Clown/Schauspieler und möchtest, dass ein Profi <span class="mark">deine Performance</span>
-    mit Dir ausbreitet, oder Dir ein Feedback zu einer bestehenden Nummer gibt? Ich biete Dir eine
-    Einschätzung und gebe Dir Tipps zum clownesken Wirken Deiner Scene.
-  </p>
+  <hr class="dotted"/>
 
-  <h2 class="h5 green">Fragen an mich</h2>
-  <p>
-    Du kannst mit <span class="mark">allen Fragen auf mich zukommen,</span> z. B. passt das Kostüm
-    zu meiner Clown-Figur? Welche Schminke ist angemessen? Wo kann ich auftreten? Welches Publikum
-    kann ich ansprechen? Welche Gage ist passend? Bin ich als Clown stimmig?
-  </p>
-
-  <p><b>Rufe mich unverbindlich und kostenlos an.</b></p>
+  <div class="download-box">
+    <%= link_to 'pdf/laeuft-die-nase-staendig.pdf', target: '_blank', class: 'download-box__link' do %>
+      <%= image_tag 'take-away.svg', alt: '5 effektive und leicht umsetzbare Tipps',
+                    title: '5 effektive und leicht umsetzbare Tipps',
+                    class: 'download-box__image' %>
+    <% end %>
+    <p class="download-box__text">
+      5 effektive und leicht umsetzbare Tipps, wie du dich in einen Clown verwandelst
+    </p>
+  </div>
 </section>

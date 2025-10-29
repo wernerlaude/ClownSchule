@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root "pages#index"
 
+  get "clownschule-online", to: "pages#workshops", as: :clownschule_online
+
   get "frage-den-clown" => "pages#fragen"
   get "ausbildung-zum-klinikclown" => "pages#klinik"
   get "sandra-cardamone" => "pages#about"

@@ -37,6 +37,21 @@
   > hr {
     margin: var(--spacing-3xl) 0;
   }
+  .img-fluid {
+    max-width: 100%;
+    height: auto;
+
+    &.float-end {
+      float: right;
+      max-width: 34rem;
+      margin: var(--spacing-lg);
+    }
+  }
+
+  img.svg-float-left {
+    float: left;
+    max-height: 4rem;
+  }
 }
 
 .footer {

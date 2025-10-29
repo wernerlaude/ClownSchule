@@ -3,7 +3,7 @@
 
 .workshops {
   &__header {
-    margin-bottom: var(--spacing-2xl);
+    margin: var(--spacing-2xl) 0;
     text-align: left;
 
     h2 {
@@ -17,6 +17,7 @@
   &__intro {
     font-size: 1.125rem;
     color: var(--color-text-light);
+    font-weight: var(--font-weight-light);
   }
 
   &__grid {
@@ -137,42 +138,111 @@
   }
 }
 
-/* workshop-details */
-/* Detail-Sections für die Workshops */
+.page-intro {
+  margin-bottom: var(--spacing-3xl);
 
-.workshop-detail {
-  h1, h2, h3, h4, h5, h6 {
-    &.h4 {
-      font-size: calc(1rem + 0.5vw);
-      margin-bottom: var(--spacing-md);
-    }
-
-    &.h5 {
-      font-size: calc(0.875rem + 0.3vw);
-      margin-bottom: var(--spacing-sm);
-      margin-top: var(--spacing-lg);
-    }
-
-    &.blue {
-      color: var(--blau-gruen);
-    }
-
-    &.green {
-      color: var(--color-primary);
-    }
+  h1 {
+    font-size: calc(1.5rem + 1.5vw);
+    color: var(--green);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-sm);
   }
 
-  p {
-    margin-bottom: var(--spacing-md);
+  .lead {
+    font-size: calc(1rem + 0.5vw);
+    color: var(--blau-gruen);
+    font-weight: 500;
+    margin-bottom: var(--spacing-xl);
+    line-height: 1.3;
+  }
+}
 
-    &.mb-5 {
-      margin-bottom: var(--spacing-3xl);
-    }
+/* _takeaways.scss */
+/* TakeAways Section mit Zitaten und Download */
+.takeaways {
+  margin-top: var(--spacing-3xl);
+
+  > h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+    font-size: calc(1.2rem + 0.8vw);
+  }
+}
+.quotes {
+  max-width: 800px;
+  margin: 0 auto var(--spacing-3xl);
+}
+
+.quote {
+  background: transparent;
+  padding: var(--spacing-lg) 0;
+  border-left: none;
+  border-bottom: 1px solid var(--color-border);
+
+  &:hover {
+    transform: none;
+    box-shadow: none;
   }
 
-  // Link als Button
-  a.btn {
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &__text {
+    font-size: 1.25rem;
+    text-align: center;
+  }
+
+  &__author {
+    text-align: center;
+  }
+}
+
+.download-box {
+  text-align: center;
+  padding: var(--spacing-2xl) var(--spacing-md);
+  background: var(--color-background-light);
+  border-radius: var(--radius-md);
+  margin-top: var(--spacing-2xl);
+
+  &__link {
     display: inline-block;
-    margin-top: var(--spacing-md);
+    transition: transform var(--transition-speed) ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__image {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    margin-bottom: var(--spacing-md);
+  }
+
+  &__text {
+    font-size: 1.125rem;
+    color: var(--color-text);
+    font-weight: 500;
+    margin: 0;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .quotes {
+    grid-template-columns: 1fr;
+  }
+
+  .quote {
+    padding: var(--spacing-lg);
+
+    &__text {
+      font-size: 1rem;
+    }
   }
 }

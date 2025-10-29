@@ -77,27 +77,72 @@
   }
 }
 
-// Flex-Layout für Icon + Text
 .flex-intro {
-  display: flex;
-  gap: var(--spacing-lg);
-  align-items: flex-start;
+   display: flex;
+   gap: var(--spacing-lg);
+   align-items: flex-start;
+   margin-bottom: var(--spacing-xl);
 
-  &__icon {
-    flex-shrink: 0;
+   &__icon {
+     flex-shrink: 0;
+     width: 96px;
+     height: 96px;
 
-    svg {
-      width: 96px;
-      height: 96px;
-      display: block;
-    }
-  }
+     img, &.svg {
+       width: 96px;
+       height: 96px;
+       display: block;
+     }
 
-  &__text {
-    flex: 1;
+     svg {
+       width: 96px;
+       height: 96px;
+       display: block;
+     }
+   }
 
-    p {
-      margin: 0;
-    }
-  }
-}
+   &__text {
+     flex: 1;
+
+     p {
+       margin-bottom: var(--spacing-md);
+
+       &:last-child {
+         margin-bottom: 0;
+       }
+     }
+
+     // Liste im flex-intro stylen
+     ul {
+       list-style: none;
+       padding: 0;
+       margin: 0 0 var(--spacing-lg) 0;
+
+       li {
+         position: relative;
+         padding-left: 1.5rem;
+         margin-bottom: var(--spacing-md);
+         line-height: 1.6;
+
+         &:last-child {
+           margin-bottom: 0;
+         }
+
+         // Bullet Point
+         &::before {
+           content: "•";
+           position: absolute;
+           left: 0;
+           color: var(--color-primary);
+           font-weight: bold;
+           font-size: 1.5rem;
+           line-height: 1;
+         }
+
+         strong {
+           color: var(--color-primary);
+         }
+       }
+     }
+   }
+ }

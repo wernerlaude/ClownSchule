@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   def index
   end
-  def klinik
+  def workshops
   end
 
   def fragen
