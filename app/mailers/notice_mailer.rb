@@ -3,7 +3,8 @@ class NoticeMailer < ApplicationMailer
 
   def notice_email
     @contact = params[:contact]
-    mail(to: "sandracardamone@yahoo.de",     subject: "Neue Kontaktanfrage: #{@contact.betreff}",
-         reply_to: @contact.email)
+    mail(to: "sandracardamone@yahoo.de",     subject: "Neue Kontaktanfrage: #{@contact.betreff}", reply_to: @contact.email)
+    # mail(to: "wernerlaude@icloud.com",     subject: "Neue Kontaktanfrage: #{@contact.betreff}",
+    # reply_to: @contact.email)
   end
 end

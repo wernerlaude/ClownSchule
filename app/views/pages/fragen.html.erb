@@ -1,5 +1,5 @@
 <section class="page-intro">
-  <h1>Kontakt zum Clown</h1>
+  <h1>Kontakt zum Clown - Buchungen</h1>
   <p class="lead">Ich freue mich auf deine Nachricht!</p>
 
   <div class="flex-intro">
@@ -72,7 +72,6 @@
               <div class="success-icon-small">✓</div>
               <h4>Zahlung erfolgreich!</h4>
               <p>Vielen Dank! Du erhältst in Kürze eine E-Mail mit allen Details zu deinem Kurs.</p>
-              <%= link_to "← Zurück", kontakt_zum_clown_path, class: "btn btn--outline btn--small" %>
             </div>
           <% end %>
         <% elsif params[:payment] == "cancelled" %>
@@ -110,7 +109,7 @@
         <ul class="payment-features">
           <li>✓ Sichere Zahlung via Stripe</li>
           <li>✓ Sofortiger Kurszugang</li>
-          <li>✓ Kreditkarte oder SEPA</li>
+          <li>✓ Kreditkarte</li>
           <li>✓ 14 Tage Geld-zurück-Garantie</li>
         </ul>
       </div>
@@ -119,3 +118,16 @@
 </section>
 
 <hr class="dotted"/>
+
+
+<% content_for :title do %>
+Deine Frage an den Clown - Clownschule Confetti
+<% end %>
+
+<% content_for :description do %>
+Deine Fragen an den Clown stellen. Was macht ein Clown? Was ist ein Klinik Clown? Clown-Workshop online buchen.
+<% end %>
+
+<% content_for :cano do %>
+https://www.clownschule-confetti.de/kontakt-zum-clown
+<% end %>

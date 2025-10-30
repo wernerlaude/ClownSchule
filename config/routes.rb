@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   get "ausbildung-zum-klinikclown" => "pages#klinik"
   get "sandra-cardamone" => "pages#about"
 
-  resources :contacts, only: [ :create ]
+  resources :contacts, only: %i[new create]
+  get "contacts/success" => "contacts#success", as: :contact_success
   resources :movies, only: %i[index show], path: "videos-mit-dem-clown"
 
   # Stripe Payments
@@ -31,4 +32,6 @@ Rails.application.routes.draw do
   get "videos_mit_dem_clown" => redirect("videos-mit-dem-clown", status: 301)
 
   get "up" => "rails/health#show", as: :rails_health_check
+
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 end

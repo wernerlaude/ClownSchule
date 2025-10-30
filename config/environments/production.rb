@@ -33,15 +33,12 @@ Rails.application.configure do
   # Skip http-to-https redirect for the default health check endpoint.
   # config.ssl_options = { redirect: { exclude: ->(request) { request.path == "/up" } } }
 
-  # Log to STDOUT with the current request id as a default log tag.
   config.log_tags = [ :request_id ]
-  config.logger   = ActiveSupport::TaggedLogging.logger(STDOUT)
-
-  # Change to "debug" to log everything (including potentially personally-identifiable information!)
-  config.log_level = ENV.fetch("RAILS_LOG_LEVEL", "warn")
+  config.logger = ActiveSupport::TaggedLogging.logger(STDOUT)
 
   # Change to "debug" to log everything (including potentially personally-identifiable information!).
-  config.log_level = ENV.fetch("RAILS_LOG_LEVEL", "info")
+  config.log_level = ENV.fetch("RAILS_LOG_LEVEL", "error")
+  config.logger = ActiveSupport::Logger.new("log/production.log", 1, 50.megabytes)
 
   # Prevent health checks from clogging up the logs.
   config.silence_healthcheck_path = "/up"
@@ -93,9 +90,9 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :mailgun
   config.action_mailer.mailgun_settings = {
     api_key: "key-35d1d1439905f04fea1b637d0f391d41",
-    domain: "mama.mamakraftplatz.de",
+    domain: "con.clownschule-confetti.de",
     api_host: "api.eu.mailgun.net"
   }
 
-  config.cache_store = :memory_store
+  # config.cache_store = :memory_store
 end

@@ -1,0 +1,16 @@
+<!-- app/views/payment_mailer/admin_notification.html.erb -->
+<h2>🎉 Neuer Kauf!</h2>
+
+<div class="highlight-box">
+  <p style="margin: 5px 0;"><strong>Produkt:</strong> <%= @product %></p>
+  <p style="margin: 5px 0;"><strong>Betrag:</strong> <%= number_to_currency(@amount, unit: "€", separator: ",", delimiter: ".") %></p>
+  <p style="margin: 5px 0;"><strong>Zeitpunkt:</strong> <%= Time.current.strftime("%d.%m.%Y um %H:%M Uhr") %></p>
+</div>
+
+<h3>Kundendaten:</h3>
+<p><strong>Name:</strong> <%= @customer_name %></p>
+<p><strong>Email:</strong> <%= @customer_email %></p>
+
+<p style="margin-top: 30px; color: #888; font-size: 14px;">
+  Denk daran, dem Kunden die Zugangsdaten zu schicken! 😊
+</p>

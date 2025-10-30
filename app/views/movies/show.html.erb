@@ -55,3 +55,15 @@
 
   </div>
 </section>
+
+<% content_for :title do %>
+<%= @movie.title %>
+<% end %>
+
+<% content_for :description do %>
+ClownschuleConfetti Video: <%= @movie.beschreibung %>
+<% end %>
+
+<% content_for :cano do %>
+https://www.clownschule-confetti.de/videos-mit-dem-clown/<%= @movie.id %>-<%= @movie.slug %>
+<% end %>
