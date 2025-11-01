@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="12d91ca4-571b-444c-9938-afbe542f89ac" name="Clown">
+        <fileTransfer rootFolder="/home" accessType="SFTP" host="91.98.169.171" port="22" sshConfigId="33410eb3-36b4-435b-aa69-483c1885b371" sshConfig="root@91.98.169.171:22 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

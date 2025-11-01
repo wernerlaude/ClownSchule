@@ -101,7 +101,6 @@
 }
 
 
-
 /* _video_detail.scss */
 /* Video Detail / Show Seite */
 
@@ -118,7 +117,7 @@
 }
 
 .video-detail {
-  margin-bottom: var(--spacing-3xl);
+  margin: var(--spacing-3xl) 0;
 
   &__container {
     display: grid;
@@ -139,6 +138,8 @@
     flex-direction: column;
     gap: var(--spacing-lg);
   }
+
+
 }
 
 // Video Wrapper - 16:9 Responsive

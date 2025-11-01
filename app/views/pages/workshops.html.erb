@@ -1,6 +1,6 @@
 <section class="page-intro">
   <h1>Clownschule Online</h1>
-  <p class="lead">Alle Kurse im Detail</p>
+  <p class="lead">Clown-Ausbildungen und Clown-Workshops</p>
 
   <div class="flex-intro">
     <div class="flex-intro__icon">
@@ -43,7 +43,7 @@
         selbst mit liebevoller Neugier zu betrachten, Spontaneität zuzulassen und das Leben wieder leicht zu nehmen.
         Ein Kurs voller Humor, Präsenz und Herz – für alle, die sich selbst neu erleben wollen.</p>
     </div>
-    <%= image_tag "entdecke-clown.webp", alt: "Glücklicher Clown",
+    <%= image_tag "sandra-clown.webp", alt: "Glücklicher Clown",
                   class: "workshop-detail__header-image" %>
   </div>
 
@@ -124,7 +124,15 @@
         Ein tiefgehender Kurs für alle, die mit Mitgefühl, Leichtigkeit und einem roten Herzen im Gesicht echte Heilung
         schenken möchten.</p>
     </div>
-    <%= image_tag "klinik-clown.webp", alt: "Klinikclown bei der Arbeit",
+    <div class="video-detail__player">
+      <div class="video-wrapper">
+        <video controls controlsList="nodownload" preload="metadata">
+          <source src="https://www.clownschule-confetti.de/videos/Klinikclown.mp4" type="video/mp4">
+          Dein Browser unterstützt leider keine Videos.
+        </video>
+      </div>
+    </div>
+    <%#= image_tag "klinik-clown.webp", alt: "Klinikclown bei der Arbeit",
                   class: "workshop-detail__header-image" %>
   </div>
 

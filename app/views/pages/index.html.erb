@@ -58,11 +58,23 @@
           Unsere Fehler und Unzulänglichkeiten sind für Clowns die größten Schätze.
         </p>
         <p class="workshop-card__description">Hebe Deine Lebensfreude auf ein neues Level!
-          Es macht Spass als Clown neue und ungeahnte Seiten an uns selbst zu entdecken. Unsere Fehler und Unzulänglichkeiten sind für Clowns die größten Schätze. Dinge, die wir im Alltag nicht mögen z. B. das Chaos ist absolut lustig in der Clown-Interpretation.
+          Es macht Spass als Clown neue und ungeahnte Seiten an uns selbst zu entdecken. Unsere Fehler und
+          Unzulänglichkeiten sind für Clowns die größten Schätze. Dinge, die wir im Alltag nicht mögen z. B. das Chaos
+          ist absolut lustig in der Clown-Interpretation.
           Begegne noch heute der Kraft des Lachens!</p>
+
+        <div class="video-detail__player">
+          <div class="video-wrapper">
+            <video controls controlsList="nodownload" preload="metadata">
+              <source src="https://www.clownschule-confetti.de/videos/Entdecke-den-Clown-in-dir.mp4" type="video/mp4">
+              Dein Browser unterstützt leider keine Videos.
+            </video>
+          </div>
+        </div><br /><br />
+
         <div class="workshop-card__footer">
-          <span class="workshop-card__price">Online Kurs</span>
-          <%= link_to "Mehr erfahren", clownschule_online_path(anchor: "clown-entdecken"), class: "btn btn--primary" %>
+              <span class="workshop-card__price">Online Kurs</span>
+              <%= link_to "Mehr erfahren", clownschule_online_path(anchor: "clown-entdecken"), class: "btn btn--primary" %>
         </div>
       </div>
     </article>
@@ -77,6 +89,7 @@
           Klinikclowns sind speziell ausgebildete Künstler, die in Krankenhäusern und
           medizinischen Einrichtungen arbeiten.
         </p>
+
         <div class="workshop-card__footer">
           <%= link_to "Klinik Clown Workshop", clownschule_online_path(anchor: "klinik-clown"), class: "btn btn--secondary" %>
         </div>
@@ -153,13 +166,13 @@
 </section>
 
 <% content_for :title do %>
-Clownschule Confetti - Clown Workshops Online
+  Clownschule Confetti - Clown Workshops Online
 <% end %>
 
 <% content_for :description do %>
-Clown Workshops Online: Deine Chance, den Clown in dir zu entdecken und zu entfesseln. Schon immer davon geträumt die Welt mit einem Lächeln zu verzaubern?
+  Clown Workshops Online: Deine Chance, den Clown in dir zu entdecken und zu entfesseln. Schon immer davon geträumt die Welt mit einem Lächeln zu verzaubern?
 <% end %>
 
 <% content_for :cano do %>
-https://www.clownschule-confetti.de
+  https://www.clownschule-confetti.de
 <% end %>
